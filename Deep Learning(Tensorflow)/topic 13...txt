@@ -1,0 +1,27 @@
+AFTER 12
+
+a.Applications of computer vision
+b.Convolutional neural network
+1. Why traditionally humans are better at image recognition than computers?
+computer cannot recognize changes in how images appear
+small changes affect computer prediciton
+CNN can be used to combat this
+ANN works well for small images
+large numbers becomes quite cumbersome eg. 1920*1080*3=6mill in first layer
+seconds layer say 4mill hence 24mil weights
+2. Disadvantages of using traditional artificial neural network (ANN) for image classification.
+3. How human brain recognizes images?
+4. How computers can use filters for feature detection
+5. What is convolution operation and how it works
+6. Importance of ReLU activation in CNN
+7. Importance of pooling operation in CNN
+8. How to handle rotation and scale in CNN
+https://www.deeplearningbook.org/contents/convnets.html
+
+
+AFTER 13
+Convolution padding and stride
+. Padding allows corner pixels in image to participate well in feature detection.
+ Stride is by how much amount you are moving a filter window during convolution operation.
+ https://youtu.be/oDAPkZ53zKk
+ 
