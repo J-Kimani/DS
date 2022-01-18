@@ -25,3 +25,32 @@ Convolution padding and stride
  Stride is by how much amount you are moving a filter window during convolution operation.
  https://youtu.be/oDAPkZ53zKk
  
+
+AFTER 15
+Part 2  
+Popular datasets for computer vision: ImageNet, Coco and Google Open images
+Imagenet, Coco and google open images datasets are 3 most popular image datasets for computer vision. These datasets provides millions of hand
+annotated images with classification labels, bounding boxes for object detections and image segmentation masks. Data collection is the most 
+difficult part in any supervised machine learning problem and availability of such datasets makes training CNNs very easy. 
+
+Part 3
+Sliding Window Object Detection 
+Sliding window object detection is a technique that allows you to detect objects in a picture. This technique is not very efficient as it is
+ very compute intensive. Recently new techniques has been discovered that tried to improve performance such as R CNN, Fast R CNN, Faster R CNN
+ tc. YOLO (You only look once) is a state of the art most modern technique that outperforms all other previous techniques such as sliding 
+ window object detection, R CNN, Fast and Faster R CNN etc. We will cover YOLO in future videos.
+
+ What is the window sizw? trial and error
+
+
+Part 4
+What is YOLO algorithm?
+YOLO (You only look once) is a state of the art object detection algorithm that has become main method of detecting objects in the field of 
+computer vision. Previously people used techniques such as sliding window object detection, R CNN, Fast R CNN and Faster R CNN. But after its 
+nvention in 2015, YOLO has become an industry standard for object detection due to its speed and accuracy. In this video we will understand 
+the theory behind how exactly YOLO algorithm works.
+Only works for a single image
+say person and dog...what to do?
+use grid cells 
+you can make all predictionsin one forward pass
+
