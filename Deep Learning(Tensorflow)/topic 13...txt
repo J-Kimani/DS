@@ -54,3 +54,48 @@ say person and dog...what to do?
 use grid cells 
 you can make all predictionsin one forward pass
 
+
+AFTER 16
+Part 1
+RNN or Recurrent Neural Network are also known as sequence models that are used mainly in the field of natural language processing as well as
+ some other areas such as speech to text translation, video activity monitoring, etc. In this video we will understand the intuition behind 
+ RNN and see how RNN's work.
+
+
+Part 2
+ different types of RNN types such as,
+1) One to many
+2) Many to many
+3) Many to one
+
+Part 3
+Vanishing and exploding gradients
+Vanishing gradient is a commong problem encountered while training a deep  neural network with many layers. 
+In case of RNN this problem is prominent as unrolling a network layer in time makes it more like a deep neural network with many layers.
+  we will discuss what vanishing and exploding gradients are in artificial neural network (ANN) and in recurrent neural network (RNN)
+  solutions to vanishing gradient is GRU and LSTM deals with prolem of hort memory
+
+Part 4
+Simple Explanation of LSTM
+LSTM or long short term memory is a special type of RNN that solves traditional RNN's short term memory problem. I will give a very simple
+ explanation of LSTM using some real life examples so that you can understand this difficult topic easily. Also refer to following blogs to 
+ explore math and understand few more details.
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+
+
+Part 5
+Simple Explanation of GRU (Gated Recurrent Units)
+Simple Explanation of GRU (Gated Recurrent Units): Similar to LSTM, Gated recurrent unit addresses short term memory problem of traditional 
+RNN. It was invented in 2014 and getting more popular compared to LSTM. 
+
+Part 6
+Bidirectional RNN
+Bi directional RNNs are used in NLP problems where looking at what comes in the sentence after a given word influences final outcome
+
+Part 7
+Converting words to numbers, Word Embeddings
+Machine learning models don't understand words. They should be converted to numbers before they are fed to RNN or any other machine learning 
+model.Techniques are,
+1) Using unique numbers
+2) One hot encoding
+3) Word embeddings
