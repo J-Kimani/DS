@@ -99,3 +99,15 @@ model.Techniques are,
 1) Using unique numbers
 2) One hot encoding
 3) Word embeddings
+
+
+After 17
+Part 1
+What is Word2Vec? A Simple Explanation
+Embeddings are not hand crafted.Instead, they are learnt during neural network training.Feature vectors
+1.take a fake problem
+2.solve it using neural network
+3.word embeddings as side effect
+
+CBOW: Continous Bag Of words:- Gven context words predict target word
+Skip Gram:- Given the target predict context words
