@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Delivery Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="img"></div>
+    <form class="form" name= "myForm">
+        <p class="demo" >Please input the correct values!!!</p>
+
+        <h2>Ship City(Use Key) 0-73</h2>
+        <input class="City"  type="number" id="ship" name="ship_city" min="0" max="73" required>
+        
+
+        <h2>Sku(Use Key) 0-53</h2>
+        <input class="City"  type="number" id="SKU" name="Sku" min="0" max="53" required>
+        
+
+        <h2>Quantity(cannot be 0)</h2>
+        <input class="City"  type="number" id="quantity" name="quan" min="1" required>
+
+        <h2>Total</h2>
+        <input class="City"  type="number" id="total" name="Total" min="0" required>
+
+        <h2>Shipping Fee</h2>
+        <input class="City"  type="number" id="Fee" name="ship fee" min="0" max="73" required>
+
+        <h2>Cash on Delivery(Yes=1, No= 0)</h2>
+        <input class="City"  type="number" id="Cod" name="cod" min="0" max="1" required>
+        </form>
+    
+    <form class="form" id="formsubmit" >
+        <button class="submit" onclick="onClickedPredictDelivery();" type="button">Status</button>
+        <div id="uidel" class="result">	<h2></h2> </div>
+        </form>
+    </body>
+    </html>
