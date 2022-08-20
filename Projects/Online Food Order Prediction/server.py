@@ -23,7 +23,7 @@ def order_again():
     feedback = int(request.form['feedback'])
 
     response = jsonify({
-        'order again?': util.order_again(age, gender, marital, occupation, income, qualification, fam_size, pin, feedback)
+        'OR': util.order_again1(age, gender, marital, occupation, income, qualification, fam_size, pin, feedback)
     })
 
     response.headers.add('Access-Control-Allow-Origin', '*')

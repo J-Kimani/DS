@@ -1,90 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Online Food Re-order Prediction</title>
+    <title>Food Order Reorder</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="app.js"></script>
 	<link rel="stylesheet" href="app.css">
 </head>
 <body>
-<div class="img"></div>
-<form class="form">
-	<h2>Age </h2>
-    <input class="age"  type="text" id="uiSqft" class="floatLabel" name="Squareft" value="50">
-	<h2>Gender</h2>
-	<div class="switch-field">
-		<input type="radio" id="radio-bhk-1" name="uiBHK" value="0"/>
-		<label for="radio-bhk-1">Female</label>
-		<input type="radio" id="radio-bhk-2" name="uiBHK" value="1" checked/>
-		<label for="radio-bhk-2">Male</label>
-	</div>
-</form>	
+    <div class="img"></div>
+    <form class="form" name= "myForm">
+        <h2 class="demo" >Enter Customer Details to Predict If the Customer Will Order Again</h2>
 
-<form class="form">
-	<h2>Marital Status</h2>
-	<div class="switch-field">
-		<input type="radio" id="radio-bath-1" name="uiBathrooms" value="0"/>
-		<label for="radio-bath-1">Prefer not to say</label>
-		<input type="radio" id="radio-bath-2" name="uiBathrooms" value="1" checked/>
-		<label for="radio-bath-2">Single</label>
-		<input type="radio" id="radio-bath-3" name="uiBathrooms" value="2"/>
-		<label for="radio-bath-3">Married</label>
-	</div>
-</form>
+        <h2>Enter the Age of the Customer:</h2>
+        <input class="City"  type="number" id="age" name="years" min= "15"required>
+        
 
-<form class="form">
-    <h2>Occupation</h2>
-	<div class="switch-field">
-		<input type="radio" id="radio-bath-1" name="uiBathrooms" value="1"/>
-		<label for="radio-bath-1">Student</label>
-		<input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked/>
-		<label for="radio-bath-2">Employee</label>
-		<input type="radio" id="radio-bath-3" name="uiBathrooms" value="3"/>
-		<label for="radio-bath-3">Self Employed</label>
-        <input type="radio" id="radio-bath-3" name="uiBathrooms" value="4"/>
-		<label for="radio-bath-3">House Wife</label>
-	</div>
+        <h2>Enter the Gender of the Customer (1 = Male, 0 = Female):</h2>
+        <input class="City"  type="number" id="gender" name="sex" min="0" max="1" required>
+        
 
-    <h2>Income Range</h2>
-	<p>{"No Income": 0, 
-		"25001 to 50000": 5000, 
-		"More than 50000": 7000, 
-		"10001 to 25000": 25000, 
-		"Below Rs.10000": 10000}</p>
-	<input class="age"  type="text" id="uiSqft" class="floatLabel" name="Squareft" value="0">
-</form>
+        <h2>Marital Status of the Customer (1 = Single, 2 = Married, 0 = Not Revealed):</h2>
+        <input class="City"  type="number" id="marital" name="ms" min="0" max="2" required>
 
-<form class="form">
-	<h2>Qualification</h2>
-	<div class="switch-field">
-		<input type="radio" id="radio-bath-1" name="uiBathrooms" value="1"/>
-		<label for="radio-bath-1">Graduate</label>
-		<input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked/>
-		<label for="radio-bath-2">Pst Graduate</label>
-		<input type="radio" id="radio-bath-3" name="uiBathrooms" value="3"/>
-		<label for="radio-bath-3">Ph.D</label>
-        <input type="radio" id="radio-bath-3" name="uiBathrooms" value="4"/>
-		<label for="radio-bath-3">School</label>
-		<input type="radio" id="radio-bath-3" name="uiBathrooms" value="5"/>
-		<label for="radio-bath-3">Uneducated</label>
-	</div>
-	<h2>Family Size</h2>
-	<input class="age"  type="text" id="uiSqft" class="floatLabel" name="Squareft" value="0">
-	<h2>Pin</h2>
-	<input class="age"  type="text" id="uiSqft" class="floatLabel" name="Squareft" value="155000887">
-</form>
+        <h2>Occupation of the Customer (Student = 1, Employee = 2, Self Employeed = 3, House wife = 4):</h2>
+        <input class="City"  type="number" id="occupation" name="work" min="1" max= "4" required>
 
+        <h2>Monthly Income: ('No Income': 0,'25001 to 50000': 5000, 'More than 50000': 7000, '10001 to 25000': 25000, 'Below Rs.10000': 10000</h2>
+        <input class="City"  type="number" id="income" name="earn" min="0" max="25000" required>
 
-<form class="form">
-	<h2>Previous Feedback</h2>
-	<div class="switch-field">
-		<input type="radio" id="radio-bhk-1" name="uiBHK" value="0"/>
-		<label for="radio-bhk-1">Negative</label>
-		<input type="radio" id="radio-bhk-2" name="uiBHK" value="1" checked/>
-		<label for="radio-bhk-2">Positive</label>
-	</div>
-	<button class="submit" onclick="onClickedEstimatePrice()" type="button">Order Again</button>
-	<div id="uiEstimatedPrice" class="result">	<h2></h2> </div>
-</form>
-</body>
-</html>
+        <h2>Educational Qualification (Graduate = 1, Post Graduate = 2, Ph.D = 3, School = 4, Uneducated = 5):</h2>
+        <input class="City"  type="number" id="edu" name="eq" min="1" max="5" required>
+
+		<h2>Family Size: </h2>
+        <input class="City"  type="number" id="fam" name="fs" min="1" required>
+
+		<h2>Pin Code: </h2>
+        <input class="City"  type="number" id="pin" name="pc" required>
+		
+		<h2>Review of the Last Order (1 = Positive, 0 = Negative): </h2>
+        <input class="City"  type="number" id="review" name="rev" min="0" max= "1" required>
+
+		
+        </form>
+    
+    <form class="form" id="formsubmit" >
+        <button class="submit" onclick="onClickedPredictReorder();" type="button">Will the customer order again</button>
+        <div id="uidel" class="result">	<h2></h2> </div>
+        </form>
+    </body>
+    </html>
+    

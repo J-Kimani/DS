@@ -23,7 +23,7 @@ def get_columns():
     return __data_columns
 
 
-def order_again(age, gender, marital, occupation, income, qualification, fam_size, pin, feedback):
+def order_again1(age, gender, marital, occupation, income, qualification, fam_size, pin, feedback):
     x = np.zeros(len(__data_columns))
 
     x[0] = age
