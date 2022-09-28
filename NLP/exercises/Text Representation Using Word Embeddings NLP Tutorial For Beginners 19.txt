@@ -1,0 +1,22 @@
+
+Text Representation Using Word Embeddings: NLP Tutorial For Beginners - 19
+Word2vec, Glove, fastText are a few popular word embedding techniques. New transformer-based word and document embedding techniques
+such as BERT, GPT, ElMo are further advancing the arena of representing text accurately in form of a dense vector.
+Limitations of BOW and TF-IDF
+1.big vector sixe consuming computer resources.
+2.sparse representation.
+3.Cant rep synonym.
+Word embeddings addresses the above
+-similar words and sentences with similar vectors
+-Low dimensions of vectors.
+-Dense representation
+Techniques
+-Word2vec
+-Glove
+-fastText
+CBOW and Skip gram techniques
+-BERT
+-GPT
+Based on transformer architecture
+-ElMo
+Based on LSTM
