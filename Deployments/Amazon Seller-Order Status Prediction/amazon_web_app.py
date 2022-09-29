@@ -10,10 +10,10 @@ def load_saved_artifacts():
     global __data_columns
     global __model
 
-    with open("C:/Users/Administrator/Documents/data science/Deployments/Amazon Seller-Order Status Prediction/columns.json", 'r') as f:
+    with open("./columns.json", 'r') as f:
         __data_columns = json.load(f)["data_columns"]
     
-    with open("C:/Users/Administrator/Documents/data science/Deployments/Amazon Seller-Order Status Prediction/amazon.pickle", "rb") as f:
+    with open("./amazon.pickle", "rb") as f:
         __model = pickle.load(f)
 
 
