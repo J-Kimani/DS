@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Reach Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="insta.js"></script>
+	<link rel="stylesheet" href="insta.css">
+</head>
+<body>
+    <div class="img"></div>
+    <form class="form" name= "myForm">
+        <p class="demo" >App designed to enable you predict the number of impressions received from your instagram post.</p>
+
+        <h2>Post Saves</h2>
+        <input class="insta"  type="number" id="saves" name="sv" min="0" required>
+        
+
+        <h2>Comments</h2>
+        <input class="insta"  type="number" id="comments" name="comm" min="0" required>
+        
+
+        <h2>Shares</h2>
+        <input class="insta"  type="number" id="shares" name="shar" min="0" required>
+
+        <h2>Likes</h2>
+        <input class="insta"  type="number" id="likes" name="lik" min="0" required>
+
+        <h2>Profile Visits</h2>
+        <input class="insta"  type="number" id="visits" name="vis" min="0" required>
+
+        <h2>Follows</h2>
+        <input class="insta"  type="number" id="follows" name="foll" min="0" required>
+        </form>
+    
+    <form class="form" id="formsubmit" >
+        <button class="submit" onclick="onClickedPredictImpression();" type="button">Predicted Impressions</button>
+        <div id="uidel" class="result">	<h2></h2> </div>
+        </form>
+    </body>
+    </html>
