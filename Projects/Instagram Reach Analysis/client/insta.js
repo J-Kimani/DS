@@ -1,3 +1,4 @@
+
 function onClickedPredictImpression() {
     console.log("Predict Delivery button clicked");
     var save = document.getElementById("saves");
@@ -14,13 +15,13 @@ function onClickedPredictImpression() {
         save: parseInt(save.value),
         comment: parseInt(comment.value),
         share: parseInt(share.value),
-        like: parseFloat(like.value),
-        prof_visit: parseFloat(prof_visit.value),
+        like: parseInt(like.value),
+        prof_visit: parseInt(prof_visit.value),
         follow: parseInt(follow.value)
         
     },function(data, status) {
-        console.log(data.Imperessions);
-        del.innerHTML = "<h2>" + data.Imperessions + "</h2>";
+        console.log(data.Impressions);
+        del.innerHTML = "<h2>" + data.Impressions + "</h2>";
         console.log(status);
     });
   }

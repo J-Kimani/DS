@@ -16,7 +16,13 @@ h2 {
 	font-size: 18px;
 	margin-bottom: 8px;
     color: beige;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+p{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  }
 
 .demo{
   color: beige;
@@ -52,7 +58,7 @@ h2 {
 }
 
 .result{
-		background: #ffffff;
+		background: #070707;
 		width: 76%;
 		border: 0;
 		margin: 25px 0 10px;
