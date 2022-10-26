@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Payment Fraud Detection</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="img"></div>
+    <form class="form" name= "myForm">
+        <p class="demo" >Welcome, detect fraud at the touch of a button.</p>
+
+        <h2>Length of transaction(Hours)</h2>
+        <input class="City"  type="number" id="Step" name="ship_city" min="0" max="1000" required>
+        
+
+        <h2>Type of transaction</h2>
+        <div class="switch-field">
+			<input type="radio" id="radio-bhk-0" name="uiBHK" value="0" checked/>
+			<label for="radio-bhk-0">Cash In</label>
+			<input type="radio" id="radio-bhk-1" name="uiBHK" value="1"/>
+			<label for="radio-bhk-1">Cash Out</label>
+			<input type="radio" id="radio-bhk-2" name="uiBHK" value="2"/>
+			<label for="radio-bhk-2">Debit</label>
+			<input type="radio" id="radio-bhk-3" name="uiBHK" value="3"/>
+			<label for="radio-bhk-3">Payment</label>
+			<input type="radio" id="radio-bhk-4" name="uiBHK" value="4"/>
+			<label for="radio-bhk-4">Transfer</label>
+		</div>
+        
+
+        <h2>Amount transacted</h2>
+        <input class="City"  type="number" id="Amount" name="quan" min="1" required>
+
+        <h2>Initial balance before transaction</h2>
+        <input class="City"  type="number" id="oldorigin" name="Total" min="0" required>
+
+        <h2>Customer's balance after the transaction.</h2>
+        <input class="City"  type="number" id="neworigin" name="ship fee" min="1" required>
+
+        <h2>Initial recipient balance before the transaction.</h2>
+        <input class="City"  type="number" id="olddest" name="cod" min="0" required>
+
+        <h2>Recipient's balance after the transaction.</h2>
+        <input class="City"  type="number" id="newdest" name="cod1" min="1" required>
+        </form>
+    
+    <form class="form" id="formsubmit" >
+        <button class="submit" onclick="onClickedPredictFraud();" type="button">Status</button>
+        <div id="uidel" class="result">	<h2></h2> </div>
+        </form>
+    </body>
+    </html>

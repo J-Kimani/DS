@@ -1,0 +1,37 @@
+from flask import Flask, request, jsonify
+import  util
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+
+@app.route('/hello')
+def hello():
+    return 'Hello'
+
+# predict impressions
+@app.route('/detect_fraud', methods= ["GET", "POST"])
+def predict_impression():
+    step = int(request.form['step'])
+    type = int(request.form['type'])  
+    amount = float(request.form['amount'])
+    old_origin = float(request.form['old_origin'])
+    new_origin = float(request.form['new_origin'])
+    old_dest = float(request.form['old_dest'])
+    new_dest = float(request.form['new_dest'])
+
+
+    response = jsonify({
+        'Fr': util.Fraud(step, type, amount, old_origin, new_origin, old_dest, new_dest)
+    })
+
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    return response
+
+
+if __name__ == "__main__":
+    print("Starting Server For Fraud Detection...")
+    util.load_saved_artifacts()
+    app.run()
