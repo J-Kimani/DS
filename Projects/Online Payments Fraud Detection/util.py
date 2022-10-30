@@ -20,6 +20,7 @@ def load_saved_artifacts():
 
 
 def Fraud(step, type, amount, old_origin, new_origin, old_dest, new_dest):
+
     x = np.zeros(7)
 
     x[0]: step
@@ -29,6 +30,9 @@ def Fraud(step, type, amount, old_origin, new_origin, old_dest, new_dest):
     x[4]: new_origin
     x[5]: old_dest
     x[6]: new_dest
+
+    
+         
 
     fr = __model.predict([x])[0]
 
