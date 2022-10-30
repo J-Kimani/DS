@@ -1,7 +1,7 @@
 function getBHKValue() {
-    var uiBHK = document.getElementsByName("uiBHK");
-    for(var i in uiBHK) {
-      if(uiBHK[i].checked) {
+    var transtype = document.getElementsByName("transtype");
+    for(var i in transtype) {
+      if(transtype[i].checked) {
           return parseInt(i);
       }
     }
