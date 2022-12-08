@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breast Cancer Survival Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="img"></div>
+    <form class="form" name= "myForm">
+        <p class="demo" >Welcome, predict whether your patient has a chance.</p>
+
+        <h2>Age</h2>
+        <input class="canc"  type="number" id="Age" name="miaka" min="1" required>
+        <h2>Gender</h2>
+        <div class="switch-field">
+			<input type="radio" id="gender-0" name="gender" value="0" />
+			<label for="gender-0">Male</label>
+			<input type="radio" id="gender-1" name="gender" value="1"/>
+			<label for="gender-1">Female</label>	
+		</div>
+        
+        <h2>Protein 1</h2>
+        <input class="canc"  type="number" id="prot1" name="p1" required>
+
+        <h2>Protein 2</h2>
+        <input class="canc"  type="number" id="prot2" name="p2" required>
+
+        <h2>Protein 3</h2>
+        <input class="canc"  type="number" id="prot3" name="p3" required>
+
+        <h2>Protein 4</h2>
+        <input class="canc"  type="number" id="prot4" name="p4" required>
+        <h2>Tumour Stage</h2>
+        <div class="switch-field">
+			<input type="radio" id="tumour-0" name="ts" value="1" />
+			<label for="tumour-0">Stage One</label>
+			<input type="radio" id="tumour-1" name="ts" value="2"/>
+			<label for="tumour-1">Stage Two</label>
+            <input type="radio" id="tumour-2" name="ts" value="3"/>
+			<label for="tumour-2">Stage Three</label>
+		</div>
+        <h2>Histology</h2>
+        <div class="switch-field">
+			<input type="radio" id="histology-0" name="histo" value="1" />
+			<label for="histology-0">Infiltrating Ductal Carcinoma</label>
+			<input type="radio" id="histology-1" name="histo" value="2"/>
+			<label for="histology-1">Infiltrating Lobular Carcinoma</label>
+            <input type="radio" id="histology-2" name="histo" value="3"/>
+			<label for="histology-2">Mucinous Carcinoma</label>
+		</div>
+            <h2>ER status</h2>
+            <div class="switch-field">
+                <input type="radio" id="er-0" name="er" value="1" />
+                <label for="er-0">Positive</label>
+                <input type="radio" id="er-1" name="er" value="2"/>
+                <label for="er-1">Negative</label>
+            </div>
+            <h2>PR status</h2>
+            <div class="switch-field">
+                <input type="radio" id="pr-0" name="pr" value="1" />
+                <label for="pr-0">Positive</label>
+                <input type="radio" id="pr-1" name="pr" value="2"/>
+                <label for="pr-1">Negative</label>
+            </div>
+            <h2>HER2 status</h2>
+            <div class="switch-field">
+                <input type="radio" id="her2-0" name="her2" value="1" />
+                <label for="her2-0">Positive</label>
+                <input type="radio" id="her2-1" name="her2" value="2"/>
+                <label for="her2-1">Negative</label>
+            </div>
+            <h2>Surgery Type</h2>
+            <div class="switch-field">
+                <input type="radio" id="st-0" name="st" value="1" />
+                <label for="st-0">Other</label>
+                <input type="radio" id="st-1" name="st" value="2"/>
+                <label for="st-1">Modified Radical Mastectomy</label>
+                <input type="radio" id="st-2" name="st" value="3"/>
+                <label for="st-2">Lumpectomy</label>
+                <input type="radio" id="st-3" name="st" value="4"/>
+                <label for="st-3">Simple Mastectomy</label>
+                
+            </div>
+    </form>
+    <form class="form" id="formsubmit" >
+        <button class="submit" onclick="onclickpredsurv();" type="button">Status</button>
+        <div id="del" class="result">	<h2></h2> </div>
+        </form>
+    </body>
+    </html>
