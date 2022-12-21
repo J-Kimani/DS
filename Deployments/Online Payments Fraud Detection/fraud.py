@@ -84,7 +84,7 @@ def main():
         elif ty == "Debit":
             ty = 2
         elif ty == "Payment":
-            type = 3
+            ty = 3
         elif ty == "Transfer":
             ty = 4
         return ty
