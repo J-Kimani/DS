@@ -22,7 +22,7 @@ def det_stress(user):
     data = __cv.transform([user]).toarray()
     prob = np.round(__model.predict_proba(data) * 100, 2).tolist()[0]
 
-    return f"not stressed: {prob[0]}, stressed: {prob[1]}" 
+    return f"not stressed: {prob[0]}%, stressed: {prob[1]}%" 
 
 if __name__ == "__main__":
     load()
