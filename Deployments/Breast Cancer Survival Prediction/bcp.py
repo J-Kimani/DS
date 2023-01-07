@@ -33,7 +33,7 @@ def get_img_as_base64(file):
 
 img = get_img_as_base64("bcp.jpg")
 
-page_bg_img = f"""
+page_bg_img = f""" 
 <style>
 [data-testid="stAppViewContainer"]> .main {{
 background-image: url("data:image/png;base64,{img}");
