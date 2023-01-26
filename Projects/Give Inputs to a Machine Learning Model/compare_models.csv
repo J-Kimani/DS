@@ -1,0 +1,9 @@
+model,best_score,best_params
+decision_tree,0.9166666666666666,"{'criterion': 'gini', 'splitter': 'random'}"
+XGBoost,0.9416666666666667,"{'gamma': 0.5, 'max_depth': 3, 'min_child_weight': 5, 'subsample': 0.8}"
+LogisticRegression,0.975,"{'C': 0.615848211066026, 'penalty': 'l1', 'solver': 'saga'}"
+RandomForestClassifier,0.9333333333333332,"{'max_features': 'auto', 'n_estimators': 40}"
+PassiveAggressiveRegressor,0.9180406757830692,"{'C': 78.47599703514607, 'average': False, 'early_stopping': False, 'epsilon': 0.0006951927961775605, 'fit_intercept': True, 'shuffle': True, 'warm_start': True}"
+svm,0.9666666666666668,"{'C': 10, 'kernel': 'rbf'}"
+BernoulliNB,0.2833333333333333,{'fit_prior': True}
+KNeighborsClassifier,0.95,"{'algorithm': 'auto', 'n_neighbors': 10, 'weights': 'uniform'}"
