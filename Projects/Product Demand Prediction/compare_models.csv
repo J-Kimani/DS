@@ -1,0 +1,11 @@
+model,best_score,best_params
+linear_regression,0.07798064670924032,"{'fit_intercept': True, 'normalize': True}"
+lasso,0.07815082772054563,"{'alpha': 10, 'selection': 'random'}"
+PassiveAggressiveRegressor,-0.2589462639612627,"{'C': 0.012742749857031334, 'average': False, 'early_stopping': False, 'epsilon': 0.004832930238571752, 'fit_intercept': True, 'shuffle': False, 'warm_start': True}"
+decision_tree,-0.26732717944690076,"{'criterion': 'friedman_mse', 'splitter': 'random'}"
+XGBoost,0.07882189780995844,"{'booster': 'gblinear', 'gamma': 0.2, 'max_depth': 3, 'min_child_weight': 1, 'subsample': 0.6}"
+LogisticRegression,0.027500000000000004,"{'C': 0.615848211066026, 'penalty': 'l2', 'solver': 'liblinear'}"
+RandomForestRegressor,0.07926616384610811,"{'criterion': 'squared_error', 'max_features': 'auto', 'n_estimators': 50}"
+svm,0.027500000000000004,"{'C': 100, 'degree': 3, 'gamma': 'scale', 'kernel': 'poly'}"
+KNeighborsRegressor,0.15050907583014306,"{'algorithm': 'brute', 'n_neighbors': 5, 'p': 2, 'weights': 'uniform'}"
+Ridge Regression,0.07799818786561823,"{'alpha': 100, 'fit_intercept': True}"
