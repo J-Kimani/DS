@@ -25,13 +25,25 @@ def get_columns():
 
 
 def predict_electricity(day, month, forcastwind, SLEA, SMPEA, temp, wind, co2, actualwind, load):
-    data = [[day, month, forcastwind, SLEA, SMPEA, temp, wind, co2, actualwind, load]]
-    X_input = pd.DataFrame(data, columns=__data_columns)
+    data = {
+        'Day': [day],
+        'Month': [month],
+        'ForecastWindProduction': [forcastwind],
+        'SystemLoadEA': [SLEA],
+        'SMPEA': [SMPEA],
+        'ORKTemperature': [temp],
+        'ORKWindspeed': [wind],
+        'CO2Intensity': [co2],
+        'ActualWindProduction': [actualwind],
+        'SystemLoadEP2': [load]
+    }
     
-    price = np.round(__model.predict(X_input)[0])
+    price = np.round(__model.predict(pd.DataFrame(data))[0])
     return price
 
 if __name__ == '__main__':
     load_saved_artifacts()
-    # print(predict_electricity(10, 12, 54.10, 4241.05, 49.56, 9.0, 14.8, 491.32, 54.0, 4426.84))
+    print(predict_electricity(10, 12, 54.10, 4241.05, 49.56, 9.0, 14.8, 491.32, 54.0, 4426.84))
     print(__data_columns)
+    print(predict_electricity(23, 4, 30.5, 3500, 40, 15, 20, 500, 25, 5000))
+

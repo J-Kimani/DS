@@ -11,14 +11,18 @@ def hello():
     return 'Hello'
 
 # predict impressions
-@app.route('/predict_price', methods= ["GET", "POST"])
-def predict_impression():
-    save = int(request.form['save'])
-    comment = int(request.form['comment'])  
-    share = int(request.form['share'])
-    like = int(request.form['like'])
-    prof_visit = int(request.form['prof_visit'])
-    follow = int(request.form['follow'])
+@app.route('/predict_electricity', methods= ["GET", "POST"])
+def predict_elect():
+    day = int(request.form['day'])
+    month = int(request.form['month'])  
+    forcastwind = int(request.form['forcastwind'])
+    SLEA = int(request.form['SLEA'])
+    SMPEA = int(request.form['SMPEA'])
+    temp = int(request.form(['temp']))
+    wind = int(request.form['wind'])
+    co2 = int(request.form['co2'])
+    actualwind = int(request.form['actualwind'])
+    load = int(request.form['load'])
 
     response = jsonify({
         'Impressions': util.predict_electricity(day, month, forcastwind, SLEA, SMPEA, temp, wind, co2, actualwind, load)
