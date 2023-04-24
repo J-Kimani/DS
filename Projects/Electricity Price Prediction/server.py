@@ -1,39 +1,25 @@
 from flask import Flask, request, jsonify
-import  util
-from flask_cors import CORS
+import util
 
 app = Flask(__name__)
-CORS(app)
 
+@app.route('/predict', methods=['POST'])
+def predict():
+    day = int(request.json['day'])
+    month = int(request.json['month'])
+    forcastwind = float(request.json['forcastwind'])
+    SLEA = float(request.json['SLEA'])
+    SMPEA = float(request.json['SMPEA'])
+    temp = float(request.json['temp'])
+    wind = float(request.json['wind'])
+    co2 = float(request.json['co2'])
+    actualwind = float(request.json['actualwind'])
+    load = float(request.json['load'])
+    
+    price = util.predict_electricity(day, month, forcastwind, SLEA, SMPEA, temp, wind, co2, actualwind, load)
+    
+    return jsonify({'price': price})
 
-@app.route('/hello')
-def hello():
-    return 'Hello'
-
-# predict impressions
-@app.route('/predict_electricity', methods= ["GET", "POST"])
-def predict_elect():
-    day = int(request.form['day'])
-    month = int(request.form['month'])  
-    forcastwind = int(request.form['forcastwind'])
-    SLEA = int(request.form['SLEA'])
-    SMPEA = int(request.form['SMPEA'])
-    temp = int(request.form(['temp']))
-    wind = int(request.form['wind'])
-    co2 = int(request.form['co2'])
-    actualwind = int(request.form['actualwind'])
-    load = int(request.form['load'])
-
-    response = jsonify({
-        'Impressions': util.predict_electricity(day, month, forcastwind, SLEA, SMPEA, temp, wind, co2, actualwind, load)
-    })
-
-    response.headers.add('Access-Control-Allow-Origin', '*')
-
-    return response
-
-
-if __name__ == "__main__":
-    print("Starting Server For Delivery Prediction...")
+if __name__ == '__main__':
     util.load_saved_artifacts()
-    app.run()
+    app.run(debug=True, port= 5000)

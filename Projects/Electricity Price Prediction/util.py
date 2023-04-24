@@ -39,7 +39,7 @@ def predict_electricity(day, month, forcastwind, SLEA, SMPEA, temp, wind, co2, a
     }
     
     price = np.round(__model.predict(pd.DataFrame(data))[0])
-    return price
+    return float(price)
 
 if __name__ == '__main__':
     load_saved_artifacts()
