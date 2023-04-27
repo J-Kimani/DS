@@ -12,7 +12,7 @@
         <p class="demo" >Worry no more about unexpectedly high electricity bills. Predict it before they hit you with the bill!!</p>
 
         <h2>Day</h2>
-        <input class="elc"  type="number" id="day" name="day" min="1" required>
+        <input class="elc"  type="number" id="day" name="day" min="0" max="6" required>
         
 
         <h2>Month</h2>
@@ -31,7 +31,7 @@
         <h2>Actual Temperature</h2>
         <input class="elc"  type="number" id="temp" name="at" min="0" required>
 
-        <h2>Wind Forecast</h2>
+        <h2>Wind Measured</h2>
         <input class="elc"  type="number" id="wind_for" name="wf" min="0" required>
 
         <h2>Co2 Intensity</h2>
@@ -48,7 +48,7 @@
         <button class="submit" onclick="onClickedPredict()" type="button">BILL</button>
         <div id="uidel" class="result">	<h2></h2> </div>
 
-        <p class="demo" >PREDICTED PRICES MIGHT DEVIATE FROM THE ACTUAL BILL. BUT THIS MODEL IS TRUSTED TO PREDICT BILLS WITH HIGH ACCURACY</p>
+        <p class="demo" >PREDICTED BILLS MIGHT DEVIATE FROM THE ACTUAL BILL. BUT THIS MODEL IS TRUSTED TO PREDICT BILLS WITH HIGH ACCURACY</p>
 
         </form>
     </body>
