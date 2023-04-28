@@ -43,7 +43,7 @@ def predict_electricity(day, month, forcastwind, SLEA, SMPEA, temp, wind, co2, a
 
 if __name__ == '__main__':
     load_saved_artifacts()
-    print(predict_electricity(10, 12, 54.10, 4241.05, 49.56, 9.0, 14.8, 491.32, 54.0, 4426.84))
+    print(predict_electricity(6, 12, 54.10, 4241.05, 49.56, 9.0, 14.8, 491.32, 54.0, 4426.84))
     print(__data_columns)
-    print(predict_electricity(23, 4, 30.5, 3500, 40, 15, 20, 500, 25, 5000))
+    
 

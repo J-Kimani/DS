@@ -4,47 +4,66 @@
     <title>Electricity Price Prediction</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="EPP.js"></script>
-	<link rel="stylesheet" href="EPP.css">
+    <link rel="stylesheet" href="EPP.css">
 </head>
 <body>
     <div class="img"></div>
-    <form class="form" name= "myForm">
+    <form class="form" name="myForm">
         <p class="demo" >Worry no more about unexpectedly high electricity bills. Predict it before they hit you with the bill!!</p>
 
         <h2>Day</h2>
-        <input class="elc"  type="number" id="day" name="day" min="0" max="6" required>
-        
+        <select class="elc" id="day" name="day" required>
+            <option value="0">Monday</option>
+            <option value="1">Tuesday</option>
+            <option value="2">Wednesday</option>
+            <option value="3">Thursday</option>
+            <option value="4">Friday</option>
+            <option value="5">Saturday</option>
+            <option value="6">Sunday</option>
+        </select>
 
         <h2>Month</h2>
-        <input class="elc"  type="number" id="month" name="mon" min="1" max= "12" required>
-        
+        <select class="elc" id="month" name="month" required>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
 
         <h2>Wind Forecast</h2>
-        <input class="elc"  type="number" id="wind_for" name="wf" min="0" required>
+        <input class="elc" type="number" id="wind_for" name="wind_for" min="0" required>
 
         <h2>System Load Forecast</h2>
-        <input class="elc"  type="number" id="system_load_for" name="slf" min="0" required>
+        <input class="elc" type="number" id="system_load_for" name="system_load_for" min="0" required>
 
         <h2>Price Forecast</h2>
-        <input class="elc"  type="number" id="price_for" name="pf" min="0" required>
+        <input class="elc" type="number" id="price_for" name="price_for" min="0" required>
 
         <h2>Actual Temperature</h2>
-        <input class="elc"  type="number" id="temp" name="at" min="0" required>
+        <input class="elc" type="number" id="temp" name="temp" min="0" required>
 
         <h2>Wind Measured</h2>
-        <input class="elc"  type="number" id="wind_for" name="wf" min="0" required>
+        <input class="elc" type="number" id="wind" name="wind" min="0" required>
 
         <h2>Co2 Intensity</h2>
-        <input class="elc"  type="number" id="Co2_int" name="Co2" min="0" required>
+        <input class="elc" type="number" id="Co2_int" name="Co2_int" min="0" required>
 
         <h2>Actual Wind</h2>
-        <input class="elc"  type="number" id="wind" name="aw" min="0" required>
+        <input class="elc" type="number" id="actual_wind" name="actual_wind" min="0" required>
 
         <h2>System Load</h2>
-        <input class="elc"  type="number" id="load" name="sl" min="0" required>
-        </form>
-    
-    <form class="form" id="formsubmit" >
+        <input class="elc" type="number" id="load" name="load" min="0" required>
+    </form>
+
+    <form class="form" id="formsubmit">
         <button class="submit" onclick="onClickedPredict()" type="button">BILL</button>
         <div id="uidel" class="result">	<h2></h2> </div>
 

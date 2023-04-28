@@ -14,13 +14,21 @@ function onClickedPredict() {
   
     var url = "http://127.0.0.1:5000/predict";
 
+    // Convert day and month to integers
+    var dayIndex = parseInt(day.value);
+    var monthIndex = parseInt(month.value) - 1; // Convert to 0-indexed
+
+    // Define lists for day and month
+    var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
     $.ajax({
         type: "POST",
         url: url,
         contentType: "application/json",
         data: JSON.stringify({
-            day: parseInt(day.value),
-            month: parseInt(month.value),
+            day: dayIndex,
+            month: monthIndex,
             forcastwind: parseFloat(forcastwind.value),
             SLEA: parseFloat(SLEA.value),
             SMPEA: parseFloat(SMPEA.value),
@@ -37,4 +45,8 @@ function onClickedPredict() {
             console.log(status);
         }
     });
-  }
+
+    // Display selected day and month in user interface
+    del.innerHTML += "<p>Selected Day: " + days[dayIndex] + "</p>";
+    del.innerHTML += "<p>Selected Month: " + months[monthIndex] + "</p>";
+}
