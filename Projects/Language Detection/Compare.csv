@@ -1,0 +1,4 @@
+model,best_score,best_params
+RandomForestClassifier,0.8759322033898306,"{'max_features': 'sqrt', 'n_estimators': 50}"
+SVC,0.8237288135593221,"{'C': 0.1, 'gamma': 0.1, 'kernel': 'linear'}"
+Multinomial NB,0.9566101694915254,"{'alpha': 0.1, 'fit_prior': False}"
