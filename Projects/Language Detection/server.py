@@ -10,7 +10,7 @@ CORS(app)
 def hello():
     return 'Hello'
 
-@app.route("/stress", methods= ["GET", "POST"])
+@app.route("/detect", methods= ["GET", "POST"])
 def stress_pred():
     user = str(request.form['user'])
 

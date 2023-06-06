@@ -20,7 +20,7 @@ def load():
 def det_lang(input):
     data = __cv.transform([input]).toarray()
     output = __model.predict(data)
-    return f"Language: {output[0]}"
+    return f"{output[0]}"
     
 
 if __name__ == "__main__":
