@@ -67,7 +67,7 @@ def main():
     st.success(detect)
 
     
-    conclusion = '<p style="font-family:Courier; color:White; font-size: 20px;"></p>'
+    conclusion = '<p style="font-family:Courier; color:White; font-size: 20px;">If you face any challenges with being able to view text, change the theme in the settings tab</p>'
     st.markdown(conclusion, unsafe_allow_html=True)
 
 
