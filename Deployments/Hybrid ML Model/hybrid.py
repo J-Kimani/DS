@@ -18,7 +18,7 @@ if uploaded:
     data['Date'] = pd.to_datetime(data['Date'])
     data.set_index('Date', inplace=True)
 
-    st.write("### Uploaded Data", data.tail(), data.head())
+    st.write("### Uploaded Data", data.tail())
 
     close = data[[' Close']]
 
