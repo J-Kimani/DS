@@ -9,9 +9,32 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense
 from tensorflow.keras.models import load_model
 from sklearn.metrics import mean_absolute_error, mean_squared_error
+import base64
+
+# Function to add a background image
+def add_bg(image_file):
+    with open(image_file, "rb") as image_file:
+        encoded_string = base64.b64encode(image_file.read()).decode()
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{encoded_string}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# Set the background image (replace 'background.png' with your image file path)
+add_bg("background.jpg")
 
 # Page Title
-st.title('Stock Price Predictor (Hybrid LSTM + Linear Regression)')
+st.title("Hybrid Stock Price Prediction")
+st.write("Welcome to the stock price prediction app. Please upload your CSV file below.")
 
 # File Uploader
 uploaded = st.file_uploader("Upload CSV File (Date, Open, High, Low, Close, Volume)", type=["csv"])
@@ -171,11 +194,49 @@ if uploaded:
         fig.add_trace(go.Scatter(x=combined_preds.index, y=combined_preds['Actual'], mode='lines', name="Actual", line=dict(color='black', dash='dash')))
 
         fig.update_layout(
-            title="Combined Model Predictions",
-            xaxis_title="Date",
-            yaxis_title="Stock Price",
-            template="plotly_dark"
+            title=dict(
+                text="Combined Model Predictions",
+                font=dict(size=18, color="black")  # Ensure the title is visible
+            ),
+            xaxis=dict(
+                title=dict(text="Date", font=dict(size=14, color="black")),  # X-axis title
+                tickfont=dict(size=12, color="black"),  # X-axis tick labels
+                showgrid=True,
+                gridcolor="lightgray",  # X-axis gridlines
+                linecolor="black",  # Bottom border
+                showline=True,  # Enable bottom and top borders
+                mirror=True  # Enable top border
+            ),
+            yaxis=dict(
+                title=dict(text="Stock Price", font=dict(size=14, color="black")),  # Y-axis title
+                tickfont=dict(size=12, color="black"),  # Y-axis tick labels
+                showgrid=True,
+                gridcolor="lightgray",  # Y-axis gridlines
+                linecolor="black",  # Left border
+                showline=True,  # Enable left and right borders
+                mirror=True  # Enable right border
+            ),
+            template="plotly_white",  # Use the white template for a clean look
+            plot_bgcolor="white",  # Set the plot background to white
+            paper_bgcolor="white",  # Set the overall chart background to white
+            legend=dict(
+                font=dict(size=12, color="black"),  # Ensure the legend text is readable
+                bgcolor="white",  # Legend background color
+                bordercolor="black",  # Legend border color
+                borderwidth=1,  # Legend border width
+                x=0.02,  # Adjust x-position inside the grid
+                y=0.98,  # Adjust y-position inside the grid
+                xanchor="left",
+                yanchor="top"
+            ),
+            margin=dict(
+                l=40,  # Left margin
+                r=40,  # Right margin
+                t=60,  # Top margin
+                b=40   # Bottom margin
+            )
         )
+
 
         st.plotly_chart(fig)
         st.write(combined_preds.tail(10))
@@ -209,11 +270,49 @@ if uploaded:
         ))
 
         fig.update_layout(
-            title="Hybrid Model with Confidence Interval",
-            xaxis_title="Date",
-            yaxis_title="Stock Price",
-            template="plotly_dark"
+            title=dict(
+                text="Combined Model Predictions",
+                font=dict(size=18, color="black")  # Ensure the title is visible
+            ),
+            xaxis=dict(
+                title=dict(text="Date", font=dict(size=14, color="black")),  # X-axis title
+                tickfont=dict(size=12, color="black"),  # X-axis tick labels
+                showgrid=True,
+                gridcolor="lightgray",  # X-axis gridlines
+                linecolor="black",  # Bottom border
+                showline=True,  # Enable bottom and top borders
+                mirror=True  # Enable top border
+            ),
+            yaxis=dict(
+                title=dict(text="Stock Price", font=dict(size=14, color="black")),  # Y-axis title
+                tickfont=dict(size=12, color="black"),  # Y-axis tick labels
+                showgrid=True,
+                gridcolor="lightgray",  # Y-axis gridlines
+                linecolor="black",  # Left border
+                showline=True,  # Enable left and right borders
+                mirror=True  # Enable right border
+            ),
+            template="plotly_white",  # Use the white template for a clean look
+            plot_bgcolor="white",  # Set the plot background to white
+            paper_bgcolor="white",  # Set the overall chart background to white
+            legend=dict(
+                font=dict(size=12, color="black"),  # Ensure the legend text is readable
+                bgcolor="white",  # Legend background color
+                bordercolor="black",  # Legend border color
+                borderwidth=1,  # Legend border width
+                x=0.02,  # Adjust x-position inside the grid
+                y=0.98,  # Adjust y-position inside the grid
+                xanchor="left",
+                yanchor="top"
+            ),
+            margin=dict(
+                l=40,  # Left margin
+                r=40,  # Right margin
+                t=60,  # Top margin
+                b=40   # Bottom margin
+            )
         )
+
 
         st.plotly_chart(fig)
 
@@ -237,10 +336,47 @@ if uploaded:
         fig.add_trace(go.Scatter(x=lstm_comparison.index, y=lstm_comparison['Actual'], mode='lines', name="Actual", line=dict(color='black', dash='dash')))
 
         fig.update_layout(
-            title="LSTM Model Predictions",
-            xaxis_title="Date",
-            yaxis_title="Stock Price",
-            template="plotly_dark"
+            title=dict(
+                text="LSTM Model Predictions",
+                font=dict(size=18, color="black")  # Make title readable
+            ),
+            xaxis=dict(
+                title=dict(text="Date", font=dict(size=14, color="black")),  # X-axis title
+                tickfont=dict(size=12, color="black"),  # X-axis tick labels
+                showgrid=True,
+                gridcolor="lightgray",  # Gridlines for x-axis
+                linecolor="black",  # Bottom border
+                showline=True,  # Enable bottom and top borders
+                mirror=True  # Enable top border
+            ),
+            yaxis=dict(
+                title=dict(text="Stock Price", font=dict(size=14, color="black")),  # Y-axis title
+                tickfont=dict(size=12, color="black"),  # Y-axis tick labels
+                showgrid=True,
+                gridcolor="lightgray",  # Gridlines for y-axis
+                linecolor="black",  # Left border
+                showline=True,  # Enable left and right borders
+                mirror=True  # Enable right border
+            ),
+            template="plotly_white",  # Set to white template
+            plot_bgcolor="white",  # Plot area background to white
+            paper_bgcolor="white",  # Overall chart background to white
+            legend=dict(
+                font=dict(size=12, color="black"),  # Legend font
+                bgcolor="white",  # Legend background
+                bordercolor="black",  # Legend border
+                borderwidth=1,  # Legend border width
+                x=0.1,  # Adjust x-position inside the grid
+                y=0.98,  # Adjust y-position inside the grid
+                xanchor="left",
+                yanchor="top"
+            ),
+            margin=dict(
+                l=40,  # Left margin
+                r=40,  # Right margin
+                t=60,  # Top margin
+                b=40   # Bottom margin
+            )
         )
 
         st.plotly_chart(fig)
