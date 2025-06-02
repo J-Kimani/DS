@@ -1,0 +1,10 @@
+model,best_score,best_params
+decision_tree,0.6992910566377972,"{'criterion': 'squared_error', 'max_depth': None, 'splitter': 'best'}"
+random_forest,0.849828206346853,"{'max_depth': None, 'max_features': 'sqrt', 'n_estimators': 50}"
+xgboost,0.8857578676564689,"{'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 100, 'subsample': 0.8}"
+ridge,0.5257171450086121,{'alpha': 0.0001}
+lasso,0.5257171426707133,{'alpha': 0.0001}
+elasticnet,0.5257171410384391,"{'alpha': 0.0001, 'l1_ratio': 0.9}"
+svr,0.47108190259722377,"{'C': 10, 'epsilon': 0.5, 'kernel': 'linear'}"
+knn,0.7205850176830799,"{'algorithm': 'auto', 'n_neighbors': 8, 'weights': 'distance'}"
+passive_aggressive,0.4740773615097834,"{'C': 0.01, 'early_stopping': True, 'fit_intercept': False}"
