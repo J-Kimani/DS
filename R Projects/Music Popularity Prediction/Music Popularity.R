@@ -12,6 +12,7 @@
 # Import libraries
 library(dplyr)
 library(ggplot2)
+library(corrplot)
 
 # import data
 data <- read.csv("songs.csv")
@@ -74,4 +75,31 @@ for (feature in features) {
   print(p)  
     }
 
+# From these visualizations, we can observe that higher energy levels, loudness and danceability tend to correlate positively with higher popularity scores.
+# now looking at correlation
+# selecting only the essential features 
+selected_features <- c("danceability",
+                       "energy",
+                       "key",
+                       "loudness",
+                       "mode",
+                       "speechiness",
+                       "acousticness",
+                       "liveness",
+                       "valence",
+                       "tempo",
+                       "duration_ms",
+                       "track_popularity")
 
+new_data <- reduced[, selected_features]
+
+# compute correlation matrix
+corr_matrix <- cor(new_data, use= "complete.obs")
+corr_matrix  
+
+# Plotting the correlation plot
+corrplot(corr_matrix, method= "color", type= "upper",
+  tl.col= "black", tl.cex= 0.8, number.cex= 0.7,
+  col= colorRampPalette(c("blue", "white", "red"))(200),
+  addCoef.col= "black", title= "Correlation Matrix", mar= c(0,0,2,0))
+  
