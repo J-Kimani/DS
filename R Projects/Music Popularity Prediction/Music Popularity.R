@@ -102,4 +102,29 @@ corrplot(corr_matrix, method= "color", type= "upper",
   tl.col= "black", tl.cex= 0.8, number.cex= 0.7,
   col= colorRampPalette(c("blue", "white", "red"))(200),
   addCoef.col= "black", title= "Correlation Matrix", mar= c(0,0,2,0))
+
+# Correlation Insights:
+# - Most features have weak correlation with `track_popularity`, suggesting no single strong predictor.
+# - `danceability`, `acousticness`, and `speechiness` show slight positive correlations with popularity.
+# - `energy`, `valence`, and `duration_ms` have mild negative correlations with popularity.
+# - High correlation pairs include:
+#     • `energy` ↔ `loudness` (0.73)
+#     • `danceability` ↔ `valence` (0.35)
+#     • `energy` ↔ `valence` (0.43)
+# - These patterns indicate some multicollinearity, which we should consider during modeling.
+
+# Distribution plots for each music feature
+for (feature in features) {
+  ggplot(reduced, aes_string(x = feature)) + 
+    geom_histogram(aes(y= ..density..), bins = 30, fill = "skyblue", color= "black", alpha= 0.7) +
+    geom_density(color= "darkblue", size= 1)+
+    ggtitle(paste("Distribution of", feature))+
+    theme_minimal()+
+    theme(plot.title = element_text(hjust = 0.5)) +
+    labs(x = feature, y= "Density")-> p
+    
+  print(p)
+  }
+
+
   
