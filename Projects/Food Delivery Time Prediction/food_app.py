@@ -1,6 +1,17 @@
 import streamlit as st
 import numpy as np
+from keras.models import load_model
 from math import radians, sin, cos, sqrt, atan2
+
+# ------------------------------
+# Load the trained model
+# ------------------------------
+@st.cache_resource
+def load_trained_model():
+    model = load_model("food_delivery_model.h5", compile=False)
+    return model
+
+model = load_trained_model()
 
 # ------------------------------
 # Function to calculate Haversine distance
@@ -34,7 +45,21 @@ st.subheader("Delivery Location")
 deliv_lat = st.number_input("Delivery Latitude:", format="%.6f", value= 12.2958104)
 deliv_lon = st.number_input("Delivery Longitude:", format="%.6f", value= 76.6393805)
 
-# Calculate distance
-if st.button("Calculate Distance"):
-    distance = calc_distance(rest_lat, rest_lon, deliv_lat, deliv_lon)
-    st.write(f"Distance: {distance:.2f} km")
+# ------------------------------
+# Prediction
+# ------------------------------
+if st.button("Predict Delivery Time"):
+    with st.spinner("Predicting delivery time..."):
+
+        distance = calc_distance(rest_lat, rest_lon, deliv_lat, deliv_lon)
+
+        # Prepare input data for the model
+        input_data = np.array([[age, rating, distance]])
+        input_reshape = input_data.reshape((1, 3, 1))
+
+        # Make prediction
+        prediction = model.predict(input_reshape, verbose=0)[0][0]
+
+    st.success(f"Estimated Delivery Time: **{prediction:.2f} minutes**")
+    st.info(f"Distance: **{distance:.2f} km**")
+    st.balloons()
