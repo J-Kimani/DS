@@ -3,6 +3,25 @@ import numpy as np
 from keras.models import load_model
 from math import radians, sin, cos, sqrt, atan2
 
+
+# ------------------------------
+# background image
+# ------------------------------
+
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-image: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092");
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # ------------------------------
 # Load the trained model
 # ------------------------------
@@ -63,3 +82,54 @@ if st.button("Predict Delivery Time"):
     st.success(f"Estimated Delivery Time: **{prediction:.2f} minutes**")
     st.info(f"Distance: **{distance:.2f} km**")
     st.balloons()
+
+# ------------------------------
+# Add map visualization
+# ------------------------------
+
+
+import pandas as pd
+import pydeck as pdk
+
+# prepare data for map
+map_data = pd.DataFrame({
+    'lat': [rest_lat, deliv_lat],
+    'lon': [rest_lon, deliv_lon],
+    'label': ['Restaurant', 'Delivery Location']
+})
+
+# Show map
+st.subheader("Delivery Route Map")
+st.pydeck_chart(pdk.Deck(
+    initial_view_state=pdk.ViewState(
+        latitude=(rest_lat + deliv_lat) / 2,
+        longitude=(rest_lon + deliv_lon) / 2,
+        zoom=10,
+        pitch=0,
+    ),
+    layers=[
+        # Show pickup and drop-off points
+        pdk.Layer(
+            'ScatterplotLayer',
+            data=map_data,
+            get_position='[lon, lat]',
+            get_color='[200, 30, 0, 160]',
+            get_radius=200,
+            pickable=True,
+        ),
+        # Line connecting the two points
+        pdk.Layer(
+            'LineLayer',
+            data=pd.DataFrame({
+                'source_lat': [rest_lat],
+                'source_lon': [rest_lon],
+                'target_lat': [deliv_lat],
+                'target_lon': [deliv_lon],
+            }),
+            get_source_position='[source_lon, source_lat]',
+            get_target_position='[target_lon, target_lat]',
+            get_color='[0, 0, 255]',
+            get_width=4,
+        )
+    ]
+))
