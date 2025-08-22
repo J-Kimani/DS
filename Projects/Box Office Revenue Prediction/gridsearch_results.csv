@@ -1,0 +1,7 @@
+model,best_score,best_params
+linear_regression,0.5490189081631833,"{'fit_intercept': True, 'positive': False}"
+ridge,0.5490189081246233,{'alpha': 0.0001}
+lasso,0.5490187075657627,{'alpha': 0.0001}
+random_forest,0.6284188280706641,"{'max_depth': 10, 'max_features': 'sqrt', 'n_estimators': 100}"
+xgboost,0.628963116436092,"{'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}"
+gradient_boosting,0.6271485011919219,"{'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}"
