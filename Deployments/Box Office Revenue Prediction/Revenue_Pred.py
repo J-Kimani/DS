@@ -1,3 +1,4 @@
+# # Revenue_Pred.py
 # import streamlit as st
 # import pandas as pd
 # import numpy as np
@@ -33,6 +34,7 @@
 # lead_actor = st.text_input("Lead Actor", "Cillian Murphy")
 # primary_company = st.text_input("Primary Production Company", "Universal Pictures")
 
+
 # if st.button("Predict Revenue"):
 #     # Apply transformations
 #     log_budget = np.log1p(budget)
@@ -56,16 +58,19 @@
 #     # Reorder columns to match training
 #     X_input = X_input[feature_order]
 
+#     # 🔍 Debug: Show feature vector being passed to the model
+#     st.subheader("Debug: Feature Vector")
+#     st.write(X_input)
+
 #     # Predict log revenue
-#     log_revenue_pred = model.predict(X_input)[0]
+#     log_revenue_pred = model.predict(X_input.values)[0]
 
 #     # Convert back to normal revenue
 #     revenue_pred = np.expm1(log_revenue_pred)
 
 #     st.success(f"💰 Predicted Revenue: **${revenue_pred:,.2f}**")
 
-
-
+# Revenue_Pred.py
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -86,7 +91,6 @@ with open("feature_order.pkl", "rb") as f:
     feature_order = pickle.load(f)
 
 st.title("🎬 Movie Revenue Prediction App")
-
 st.markdown("Enter the details of the movie below to predict its box office revenue.")
 
 # Input fields in main layout (no sidebar)
@@ -100,6 +104,9 @@ runtime = st.number_input("Runtime (minutes)", min_value=1, step=1, value=130)
 director = st.text_input("Director", "Christopher Nolan")
 lead_actor = st.text_input("Lead Actor", "Cillian Murphy")
 primary_company = st.text_input("Primary Production Company", "Universal Pictures")
+
+# Toggle to show/hide debug panel
+show_debug = st.checkbox("Show Feature Vector Debug", value=False)
 
 if st.button("Predict Revenue"):
     # Apply transformations
@@ -124,9 +131,10 @@ if st.button("Predict Revenue"):
     # Reorder columns to match training
     X_input = X_input[feature_order]
 
-    # 🔍 Debug: Show feature vector being passed to the model
-    st.subheader("Debug: Feature Vector")
-    st.write(X_input)
+    # 🔍 Show debug panel only if toggle is on
+    if show_debug:
+        st.subheader("Debug: Feature Vector")
+        st.write(X_input)
 
     # Predict log revenue
     log_revenue_pred = model.predict(X_input.values)[0]
