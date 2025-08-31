@@ -1,7 +1,7 @@
 model,best_score,best_params
-linear_regression,0.5490189081631832,"{'fit_intercept': True, 'positive': False}"
-ridge,0.5490189081246234,{'alpha': 0.0001}
-lasso,0.5490187075657627,{'alpha': 0.0001}
-random_forest,0.6269635192419715,"{'max_depth': 10, 'max_features': 'log2', 'n_estimators': 100}"
-xgboost,0.628963116436092,"{'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}"
-gradient_boosting,0.6281285829286208,"{'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.6}"
+linear_regression,0.5522295007883449,"{'fit_intercept': True, 'positive': False}"
+ridge,0.552251340718229,{'alpha': 2.782559402207126}
+lasso,0.5522364314566481,{'alpha': 0.001291549665014884}
+random_forest,0.6332998986653904,"{'max_depth': 10, 'max_features': 'sqrt', 'n_estimators': 100}"
+xgboost,0.6336712005690022,"{'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 100, 'subsample': 0.8}"
+gradient_boosting,0.6326698554658795,"{'learning_rate': 0.1, 'max_depth': 3, 'n_estimators': 50, 'subsample': 0.8}"
