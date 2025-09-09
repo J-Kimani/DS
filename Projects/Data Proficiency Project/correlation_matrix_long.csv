@@ -1,0 +1,442 @@
+feature_1,feature_2,correlation
+age_range,age_range,1.0
+age_range,experience_years,0.12346471104127647
+age_range,hours_per_week,0.27337256862717096
+age_range,skill_level,0.09547972801289945
+age_range,ref_source_LinkedIn,-0.1743779858259087
+age_range,ref_source_Twitter,0.48564293117863194
+age_range,ref_source_WhatsApp,-0.262277159081954
+age_range,ref_source_Word of mouth,0.02365675018317802
+age_range,ref_source_through a geeks for geeks webinar,-0.09230925291687624
+age_range,main_aim_Connect with fellow data professionals,0.01645133606725523
+age_range,main_aim_Learn data afresh,-0.26363473406840016
+age_range,main_aim_Upskill,0.24945513919971554
+age_range,main_aim_both upskilling and connecting with fellow data professionals,-0.09230925291687624
+age_range,gender,-0.13474770886266482
+age_range,country,0.11538656614609526
+age_range,track,-0.01645133606725513
+age_range,aptitude_completed,-0.16451336067255246
+age_range,total_score,0.3199577406279589
+age_range,month,-0.08798446275141401
+age_range,motivation_len,-0.1079127249154956
+age_range,graduated_num,-0.04063180276860003
+experience_years,age_range,0.12346471104127647
+experience_years,experience_years,1.0
+experience_years,hours_per_week,0.061658086163610695
+experience_years,skill_level,0.6510354103974587
+experience_years,ref_source_LinkedIn,-0.09891584831523878
+experience_years,ref_source_Twitter,0.33113913454360755
+experience_years,ref_source_WhatsApp,-0.09230223079880914
+experience_years,ref_source_Word of mouth,-0.1665086523737407
+experience_years,ref_source_through a geeks for geeks webinar,-0.08121513514008279
+experience_years,main_aim_Connect with fellow data professionals,-0.0018092680848855237
+experience_years,main_aim_Learn data afresh,-0.24568387401622482
+experience_years,main_aim_Upskill,0.2547472593261511
+experience_years,main_aim_both upskilling and connecting with fellow data professionals,-0.08121513514008279
+experience_years,gender,0.19458181259252944
+experience_years,country,-0.08121513514008274
+experience_years,track,-0.11217462126290342
+experience_years,aptitude_completed,0.11579315743267458
+experience_years,total_score,0.1686205691665021
+experience_years,month,-0.058748749213820214
+experience_years,motivation_len,0.1010332775987159
+experience_years,graduated_num,0.20555387655340918
+hours_per_week,age_range,0.27337256862717096
+hours_per_week,experience_years,0.061658086163610695
+hours_per_week,hours_per_week,1.0
+hours_per_week,skill_level,0.2825308125526225
+hours_per_week,ref_source_LinkedIn,0.1532589197696066
+hours_per_week,ref_source_Twitter,0.10903797994293224
+hours_per_week,ref_source_WhatsApp,-0.03680452470251774
+hours_per_week,ref_source_Word of mouth,-0.2755331890595876
+hours_per_week,ref_source_through a geeks for geeks webinar,-0.032383664204138206
+hours_per_week,main_aim_Connect with fellow data professionals,0.0992682515405903
+hours_per_week,main_aim_Learn data afresh,-0.013629747492866568
+hours_per_week,main_aim_Upskill,-0.010001500337584351
+hours_per_week,main_aim_both upskilling and connecting with fellow data professionals,-0.032383664204138206
+hours_per_week,gender,-0.058370396709673825
+hours_per_week,country,-0.03238366420413817
+hours_per_week,track,-0.24470778286750164
+hours_per_week,aptitude_completed,-0.09926825154059024
+hours_per_week,total_score,0.1238281054204926
+hours_per_week,month,0.05644151564780914
+hours_per_week,motivation_len,0.12623141638727423
+hours_per_week,graduated_num,0.03706126092186208
+skill_level,age_range,0.09547972801289945
+skill_level,experience_years,0.6510354103974587
+skill_level,hours_per_week,0.2825308125526225
+skill_level,skill_level,1.0
+skill_level,ref_source_LinkedIn,-0.15346553406591915
+skill_level,ref_source_Twitter,0.4274017241664559
+skill_level,ref_source_WhatsApp,-0.10551922850953295
+skill_level,ref_source_Word of mouth,-0.27363022600554104
+skill_level,ref_source_through a geeks for geeks webinar,0.04932366327814371
+skill_level,main_aim_Connect with fellow data professionals,0.07032362499023352
+skill_level,main_aim_Learn data afresh,-0.3419213793331645
+skill_level,main_aim_Upskill,0.2598624730468498
+skill_level,main_aim_both upskilling and connecting with fellow data professionals,0.04932366327814371
+skill_level,gender,0.1399485208178945
+skill_level,country,-0.1334640300467418
+skill_level,track,-0.20062916541331324
+skill_level,aptitude_completed,0.0599819154328463
+skill_level,total_score,0.13554069441338848
+skill_level,month,-0.15565580974852686
+skill_level,motivation_len,0.10227666083015748
+skill_level,graduated_num,0.21710817657110307
+ref_source_LinkedIn,age_range,-0.1743779858259087
+ref_source_LinkedIn,experience_years,-0.09891584831523878
+ref_source_LinkedIn,hours_per_week,0.1532589197696066
+ref_source_LinkedIn,skill_level,-0.15346553406591915
+ref_source_LinkedIn,ref_source_LinkedIn,1.0
+ref_source_LinkedIn,ref_source_Twitter,-0.18898223650461363
+ref_source_LinkedIn,ref_source_WhatsApp,-0.4082482904638628
+ref_source_LinkedIn,ref_source_Word of mouth,-0.09205746178983232
+ref_source_LinkedIn,ref_source_through a geeks for geeks webinar,-0.04490132550669373
+ref_source_LinkedIn,main_aim_Connect with fellow data professionals,-0.06401843996644799
+ref_source_LinkedIn,main_aim_Learn data afresh,0.05399492471560388
+ref_source_LinkedIn,main_aim_Upskill,-0.034668762264076815
+ref_source_LinkedIn,main_aim_both upskilling and connecting with fellow data professionals,-0.04490132550669373
+ref_source_LinkedIn,gender,-0.1937833198497101
+ref_source_LinkedIn,country,-0.04490132550669374
+ref_source_LinkedIn,track,-0.22406453988256786
+ref_source_LinkedIn,aptitude_completed,0.06401843996644797
+ref_source_LinkedIn,total_score,-0.02703327150600339
+ref_source_LinkedIn,month,-0.2078742949189203
+ref_source_LinkedIn,motivation_len,-0.021057817483395996
+ref_source_LinkedIn,graduated_num,0.039528470752104757
+ref_source_Twitter,age_range,0.48564293117863194
+ref_source_Twitter,experience_years,0.33113913454360755
+ref_source_Twitter,hours_per_week,0.10903797994293224
+ref_source_Twitter,skill_level,0.4274017241664559
+ref_source_Twitter,ref_source_LinkedIn,-0.18898223650461363
+ref_source_Twitter,ref_source_Twitter,1.0
+ref_source_Twitter,ref_source_WhatsApp,-0.6172133998483679
+ref_source_Twitter,ref_source_Word of mouth,-0.13917780012784423
+ref_source_Twitter,ref_source_through a geeks for geeks webinar,-0.06788442333021309
+ref_source_Twitter,main_aim_Connect with fellow data professionals,-0.09678678369916546
+ref_source_Twitter,main_aim_Learn data afresh,-0.2857142857142857
+ref_source_Twitter,main_aim_Upskill,0.34069257193462354
+ref_source_Twitter,main_aim_both upskilling and connecting with fellow data professionals,-0.06788442333021309
+ref_source_Twitter,gender,-0.060317937947625785
+ref_source_Twitter,country,-0.06788442333021308
+ref_source_Twitter,track,-0.12098347962395672
+ref_source_Twitter,aptitude_completed,-0.12098347962395677
+ref_source_Twitter,total_score,0.2153586377636975
+ref_source_Twitter,month,-0.23108558332704263
+ref_source_Twitter,motivation_len,-0.10555475736683807
+ref_source_Twitter,graduated_num,0.05976143046671964
+ref_source_WhatsApp,age_range,-0.262277159081954
+ref_source_WhatsApp,experience_years,-0.09230223079880914
+ref_source_WhatsApp,hours_per_week,-0.03680452470251774
+ref_source_WhatsApp,skill_level,-0.10551922850953295
+ref_source_WhatsApp,ref_source_LinkedIn,-0.4082482904638628
+ref_source_WhatsApp,ref_source_Twitter,-0.6172133998483679
+ref_source_WhatsApp,ref_source_WhatsApp,1.0
+ref_source_WhatsApp,ref_source_Word of mouth,-0.3006584112011315
+ref_source_WhatsApp,ref_source_through a geeks for geeks webinar,-0.14664711502135327
+ref_source_WhatsApp,main_aim_Connect with fellow data professionals,0.15681251204679503
+ref_source_WhatsApp,main_aim_Learn data afresh,0.1543033499620919
+ref_source_WhatsApp,main_aim_Upskill,-0.21701976487771413
+ref_source_WhatsApp,main_aim_both upskilling and connecting with fellow data professionals,-0.14664711502135327
+ref_source_WhatsApp,gender,0.07445807910499401
+ref_source_WhatsApp,country,0.10998533626601491
+ref_source_WhatsApp,track,0.20908334939572662
+ref_source_WhatsApp,aptitude_completed,0.026135418674465883
+ref_source_WhatsApp,total_score,-0.12100033060427201
+ref_source_WhatsApp,month,0.19968076595771805
+ref_source_WhatsApp,motivation_len,-0.01012699594761386
+ref_source_WhatsApp,graduated_num,-0.11834115780078214
+ref_source_Word of mouth,age_range,0.02365675018317802
+ref_source_Word of mouth,experience_years,-0.1665086523737407
+ref_source_Word of mouth,hours_per_week,-0.2755331890595876
+ref_source_Word of mouth,skill_level,-0.27363022600554104
+ref_source_Word of mouth,ref_source_LinkedIn,-0.09205746178983232
+ref_source_Word of mouth,ref_source_Twitter,-0.13917780012784423
+ref_source_Word of mouth,ref_source_WhatsApp,-0.3006584112011315
+ref_source_Word of mouth,ref_source_Word of mouth,1.0
+ref_source_Word of mouth,ref_source_through a geeks for geeks webinar,-0.03306801645716227
+ref_source_Word of mouth,main_aim_Connect with fellow data professionals,-0.0471470007284477
+ref_source_Word of mouth,main_aim_Learn data afresh,0.17397225015980522
+ref_source_Word of mouth,main_aim_Upskill,-0.06383036514852068
+ref_source_Word of mouth,main_aim_both upskilling and connecting with fellow data professionals,-0.03306801645716227
+ref_source_Word of mouth,gender,0.046172048514891054
+ref_source_Word of mouth,country,-0.033068016457162286
+ref_source_Word of mouth,track,0.04714700072844776
+ref_source_Word of mouth,aptitude_completed,0.047147000728447575
+ref_source_Word of mouth,total_score,-0.08501003047048396
+ref_source_Word of mouth,month,0.1711017502447765
+ref_source_Word of mouth,motivation_len,0.0550692866229776
+ref_source_Word of mouth,graduated_num,0.007277781371744767
+ref_source_through a geeks for geeks webinar,age_range,-0.09230925291687624
+ref_source_through a geeks for geeks webinar,experience_years,-0.08121513514008279
+ref_source_through a geeks for geeks webinar,hours_per_week,-0.032383664204138206
+ref_source_through a geeks for geeks webinar,skill_level,0.04932366327814371
+ref_source_through a geeks for geeks webinar,ref_source_LinkedIn,-0.04490132550669373
+ref_source_through a geeks for geeks webinar,ref_source_Twitter,-0.06788442333021309
+ref_source_through a geeks for geeks webinar,ref_source_WhatsApp,-0.14664711502135327
+ref_source_through a geeks for geeks webinar,ref_source_Word of mouth,-0.03306801645716227
+ref_source_through a geeks for geeks webinar,ref_source_through a geeks for geeks webinar,1.0
+ref_source_through a geeks for geeks webinar,main_aim_Connect with fellow data professionals,-0.022996102490913696
+ref_source_through a geeks for geeks webinar,main_aim_Learn data afresh,-0.06788442333021306
+ref_source_through a geeks for geeks webinar,main_aim_Upskill,-0.1618940314506833
+ref_source_through a geeks for geeks webinar,main_aim_both upskilling and connecting with fellow data professionals,1.0
+ref_source_through a geeks for geeks webinar,gender,0.15150199205955966
+ref_source_through a geeks for geeks webinar,country,-0.016129032258064526
+ref_source_through a geeks for geeks webinar,track,0.02299610249091366
+ref_source_through a geeks for geeks webinar,aptitude_completed,0.022996102490913654
+ref_source_through a geeks for geeks webinar,total_score,0.08963600864642515
+ref_source_through a geeks for geeks webinar,month,0.08345543352091687
+ref_source_through a geeks for geeks webinar,motivation_len,0.1691294432234266
+ref_source_through a geeks for geeks webinar,graduated_num,0.22718473369882597
+main_aim_Connect with fellow data professionals,age_range,0.01645133606725523
+main_aim_Connect with fellow data professionals,experience_years,-0.0018092680848855237
+main_aim_Connect with fellow data professionals,hours_per_week,0.0992682515405903
+main_aim_Connect with fellow data professionals,skill_level,0.07032362499023352
+main_aim_Connect with fellow data professionals,ref_source_LinkedIn,-0.06401843996644799
+main_aim_Connect with fellow data professionals,ref_source_Twitter,-0.09678678369916546
+main_aim_Connect with fellow data professionals,ref_source_WhatsApp,0.15681251204679503
+main_aim_Connect with fellow data professionals,ref_source_Word of mouth,-0.0471470007284477
+main_aim_Connect with fellow data professionals,ref_source_through a geeks for geeks webinar,-0.022996102490913696
+main_aim_Connect with fellow data professionals,main_aim_Connect with fellow data professionals,1.0
+main_aim_Connect with fellow data professionals,main_aim_Learn data afresh,-0.09678678369916545
+main_aim_Connect with fellow data professionals,main_aim_Upskill,-0.23082176787424136
+main_aim_Connect with fellow data professionals,main_aim_both upskilling and connecting with fellow data professionals,-0.022996102490913696
+main_aim_Connect with fellow data professionals,gender,-0.15178745954623013
+main_aim_Connect with fellow data professionals,country,-0.022996102490913703
+main_aim_Connect with fellow data professionals,track,0.03278688524590165
+main_aim_Connect with fellow data professionals,aptitude_completed,0.03278688524590155
+main_aim_Connect with fellow data professionals,total_score,0.014451418146372332
+main_aim_Connect with fellow data professionals,month,0.11898728156557999
+main_aim_Connect with fellow data professionals,motivation_len,-0.0018323534700381205
+main_aim_Connect with fellow data professionals,graduated_num,0.11134424539960092
+main_aim_Learn data afresh,age_range,-0.26363473406840016
+main_aim_Learn data afresh,experience_years,-0.24568387401622482
+main_aim_Learn data afresh,hours_per_week,-0.013629747492866568
+main_aim_Learn data afresh,skill_level,-0.3419213793331645
+main_aim_Learn data afresh,ref_source_LinkedIn,0.05399492471560388
+main_aim_Learn data afresh,ref_source_Twitter,-0.2857142857142857
+main_aim_Learn data afresh,ref_source_WhatsApp,0.1543033499620919
+main_aim_Learn data afresh,ref_source_Word of mouth,0.17397225015980522
+main_aim_Learn data afresh,ref_source_through a geeks for geeks webinar,-0.06788442333021306
+main_aim_Learn data afresh,main_aim_Connect with fellow data professionals,-0.09678678369916545
+main_aim_Learn data afresh,main_aim_Learn data afresh,1.0
+main_aim_Learn data afresh,main_aim_Upskill,-0.6813851438692468
+main_aim_Learn data afresh,main_aim_both upskilling and connecting with fellow data professionals,-0.06788442333021306
+main_aim_Learn data afresh,gender,0.09478533106055484
+main_aim_Learn data afresh,country,-0.06788442333021306
+main_aim_Learn data afresh,track,0.09678678369916537
+main_aim_Learn data afresh,aptitude_completed,0.09678678369916552
+main_aim_Learn data afresh,total_score,-0.03815876447249074
+main_aim_Learn data afresh,month,0.018486846666163317
+main_aim_Learn data afresh,motivation_len,0.002472732236997673
+main_aim_Learn data afresh,graduated_num,-0.11952286093343932
+main_aim_Upskill,age_range,0.24945513919971554
+main_aim_Upskill,experience_years,0.2547472593261511
+main_aim_Upskill,hours_per_week,-0.010001500337584351
+main_aim_Upskill,skill_level,0.2598624730468498
+main_aim_Upskill,ref_source_LinkedIn,-0.034668762264076815
+main_aim_Upskill,ref_source_Twitter,0.34069257193462354
+main_aim_Upskill,ref_source_WhatsApp,-0.21701976487771413
+main_aim_Upskill,ref_source_Word of mouth,-0.06383036514852068
+main_aim_Upskill,ref_source_through a geeks for geeks webinar,-0.1618940314506833
+main_aim_Upskill,main_aim_Connect with fellow data professionals,-0.23082176787424136
+main_aim_Upskill,main_aim_Learn data afresh,-0.6813851438692468
+main_aim_Upskill,main_aim_Upskill,1.0
+main_aim_Upskill,main_aim_both upskilling and connecting with fellow data professionals,-0.1618940314506833
+main_aim_Upskill,gender,-0.13910683541222546
+main_aim_Upskill,country,-0.16189403145068326
+main_aim_Upskill,track,-0.14204416484568705
+main_aim_Upskill,aptitude_completed,0.04438880151427721
+main_aim_Upskill,total_score,-0.19516078690450867
+main_aim_Upskill,month,-0.08817663872718716
+main_aim_Upskill,motivation_len,0.013098345331148092
+main_aim_Upskill,graduated_num,0.054816126206689304
+main_aim_both upskilling and connecting with fellow data professionals,age_range,-0.09230925291687624
+main_aim_both upskilling and connecting with fellow data professionals,experience_years,-0.08121513514008279
+main_aim_both upskilling and connecting with fellow data professionals,hours_per_week,-0.032383664204138206
+main_aim_both upskilling and connecting with fellow data professionals,skill_level,0.04932366327814371
+main_aim_both upskilling and connecting with fellow data professionals,ref_source_LinkedIn,-0.04490132550669373
+main_aim_both upskilling and connecting with fellow data professionals,ref_source_Twitter,-0.06788442333021309
+main_aim_both upskilling and connecting with fellow data professionals,ref_source_WhatsApp,-0.14664711502135327
+main_aim_both upskilling and connecting with fellow data professionals,ref_source_Word of mouth,-0.03306801645716227
+main_aim_both upskilling and connecting with fellow data professionals,ref_source_through a geeks for geeks webinar,1.0
+main_aim_both upskilling and connecting with fellow data professionals,main_aim_Connect with fellow data professionals,-0.022996102490913696
+main_aim_both upskilling and connecting with fellow data professionals,main_aim_Learn data afresh,-0.06788442333021306
+main_aim_both upskilling and connecting with fellow data professionals,main_aim_Upskill,-0.1618940314506833
+main_aim_both upskilling and connecting with fellow data professionals,main_aim_both upskilling and connecting with fellow data professionals,1.0
+main_aim_both upskilling and connecting with fellow data professionals,gender,0.15150199205955966
+main_aim_both upskilling and connecting with fellow data professionals,country,-0.016129032258064526
+main_aim_both upskilling and connecting with fellow data professionals,track,0.02299610249091366
+main_aim_both upskilling and connecting with fellow data professionals,aptitude_completed,0.022996102490913654
+main_aim_both upskilling and connecting with fellow data professionals,total_score,0.08963600864642515
+main_aim_both upskilling and connecting with fellow data professionals,month,0.08345543352091687
+main_aim_both upskilling and connecting with fellow data professionals,motivation_len,0.1691294432234266
+main_aim_both upskilling and connecting with fellow data professionals,graduated_num,0.22718473369882597
+gender,age_range,-0.13474770886266482
+gender,experience_years,0.19458181259252944
+gender,hours_per_week,-0.058370396709673825
+gender,skill_level,0.1399485208178945
+gender,ref_source_LinkedIn,-0.1937833198497101
+gender,ref_source_Twitter,-0.060317937947625785
+gender,ref_source_WhatsApp,0.07445807910499401
+gender,ref_source_Word of mouth,0.046172048514891054
+gender,ref_source_through a geeks for geeks webinar,0.15150199205955966
+gender,main_aim_Connect with fellow data professionals,-0.15178745954623013
+gender,main_aim_Learn data afresh,0.09478533106055484
+gender,main_aim_Upskill,-0.13910683541222546
+gender,main_aim_both upskilling and connecting with fellow data professionals,0.15150199205955966
+gender,gender,1.0
+gender,country,-0.10646085928509604
+gender,track,0.1517874595462302
+gender,aptitude_completed,0.15178745954623016
+gender,total_score,0.033722015588092895
+gender,month,0.34010198336735975
+gender,motivation_len,0.2608821855106305
+gender,graduated_num,-0.014418745018211825
+country,age_range,0.11538656614609526
+country,experience_years,-0.08121513514008274
+country,hours_per_week,-0.03238366420413817
+country,skill_level,-0.1334640300467418
+country,ref_source_LinkedIn,-0.04490132550669374
+country,ref_source_Twitter,-0.06788442333021308
+country,ref_source_WhatsApp,0.10998533626601491
+country,ref_source_Word of mouth,-0.033068016457162286
+country,ref_source_through a geeks for geeks webinar,-0.016129032258064526
+country,main_aim_Connect with fellow data professionals,-0.022996102490913703
+country,main_aim_Learn data afresh,-0.06788442333021306
+country,main_aim_Upskill,-0.16189403145068326
+country,main_aim_both upskilling and connecting with fellow data professionals,-0.016129032258064526
+country,gender,-0.10646085928509604
+country,country,1.0
+country,track,0.02299610249091375
+country,aptitude_completed,-0.7013811259728677
+country,total_score,0.13102202259818024
+country,month,0.08345543352091751
+country,motivation_len,0.17375608452741076
+country,graduated_num,-0.07099522928088316
+track,age_range,-0.01645133606725513
+track,experience_years,-0.11217462126290342
+track,hours_per_week,-0.24470778286750164
+track,skill_level,-0.20062916541331324
+track,ref_source_LinkedIn,-0.22406453988256786
+track,ref_source_Twitter,-0.12098347962395672
+track,ref_source_WhatsApp,0.20908334939572662
+track,ref_source_Word of mouth,0.04714700072844776
+track,ref_source_through a geeks for geeks webinar,0.02299610249091366
+track,main_aim_Connect with fellow data professionals,0.03278688524590165
+track,main_aim_Learn data afresh,0.09678678369916537
+track,main_aim_Upskill,-0.14204416484568705
+track,main_aim_both upskilling and connecting with fellow data professionals,0.02299610249091366
+track,gender,0.1517874595462302
+track,country,0.02299610249091375
+track,track,1.0
+track,aptitude_completed,-0.03278688524590155
+track,total_score,-0.17621484112839325
+track,month,0.2755494941518693
+track,motivation_len,0.14915357246110456
+track,graduated_num,-0.1113442453996009
+aptitude_completed,age_range,-0.16451336067255246
+aptitude_completed,experience_years,0.11579315743267458
+aptitude_completed,hours_per_week,-0.09926825154059024
+aptitude_completed,skill_level,0.0599819154328463
+aptitude_completed,ref_source_LinkedIn,0.06401843996644797
+aptitude_completed,ref_source_Twitter,-0.12098347962395677
+aptitude_completed,ref_source_WhatsApp,0.026135418674465883
+aptitude_completed,ref_source_Word of mouth,0.047147000728447575
+aptitude_completed,ref_source_through a geeks for geeks webinar,0.022996102490913654
+aptitude_completed,main_aim_Connect with fellow data professionals,0.03278688524590155
+aptitude_completed,main_aim_Learn data afresh,0.09678678369916552
+aptitude_completed,main_aim_Upskill,0.04438880151427721
+aptitude_completed,main_aim_both upskilling and connecting with fellow data professionals,0.022996102490913654
+aptitude_completed,gender,0.15178745954623016
+aptitude_completed,country,-0.7013811259728677
+aptitude_completed,track,-0.03278688524590155
+aptitude_completed,aptitude_completed,1.0
+aptitude_completed,total_score,0.02753394417086196
+aptitude_completed,month,0.0782811062931446
+aptitude_completed,motivation_len,-0.053138250631105936
+aptitude_completed,graduated_num,0.10122204127236455
+total_score,age_range,0.3199577406279589
+total_score,experience_years,0.1686205691665021
+total_score,hours_per_week,0.1238281054204926
+total_score,skill_level,0.13554069441338848
+total_score,ref_source_LinkedIn,-0.02703327150600339
+total_score,ref_source_Twitter,0.2153586377636975
+total_score,ref_source_WhatsApp,-0.12100033060427201
+total_score,ref_source_Word of mouth,-0.08501003047048396
+total_score,ref_source_through a geeks for geeks webinar,0.08963600864642515
+total_score,main_aim_Connect with fellow data professionals,0.014451418146372332
+total_score,main_aim_Learn data afresh,-0.03815876447249074
+total_score,main_aim_Upskill,-0.19516078690450867
+total_score,main_aim_both upskilling and connecting with fellow data professionals,0.08963600864642515
+total_score,gender,0.033722015588092895
+total_score,country,0.13102202259818024
+total_score,track,-0.17621484112839325
+total_score,aptitude_completed,0.02753394417086196
+total_score,total_score,1.0
+total_score,month,-0.1100269257905932
+total_score,motivation_len,-0.11998941187983833
+total_score,graduated_num,-0.05152928347134899
+month,age_range,-0.08798446275141401
+month,experience_years,-0.058748749213820214
+month,hours_per_week,0.05644151564780914
+month,skill_level,-0.15565580974852686
+month,ref_source_LinkedIn,-0.2078742949189203
+month,ref_source_Twitter,-0.23108558332704263
+month,ref_source_WhatsApp,0.19968076595771805
+month,ref_source_Word of mouth,0.1711017502447765
+month,ref_source_through a geeks for geeks webinar,0.08345543352091687
+month,main_aim_Connect with fellow data professionals,0.11898728156557999
+month,main_aim_Learn data afresh,0.018486846666163317
+month,main_aim_Upskill,-0.08817663872718716
+month,main_aim_both upskilling and connecting with fellow data professionals,0.08345543352091687
+month,gender,0.34010198336735975
+month,country,0.08345543352091751
+month,track,0.2755494941518693
+month,aptitude_completed,0.0782811062931446
+month,total_score,-0.1100269257905932
+month,month,1.0
+month,motivation_len,0.22357381800111253
+month,graduated_num,-0.11987084357238831
+motivation_len,age_range,-0.1079127249154956
+motivation_len,experience_years,0.1010332775987159
+motivation_len,hours_per_week,0.12623141638727423
+motivation_len,skill_level,0.10227666083015748
+motivation_len,ref_source_LinkedIn,-0.021057817483395996
+motivation_len,ref_source_Twitter,-0.10555475736683807
+motivation_len,ref_source_WhatsApp,-0.01012699594761386
+motivation_len,ref_source_Word of mouth,0.0550692866229776
+motivation_len,ref_source_through a geeks for geeks webinar,0.1691294432234266
+motivation_len,main_aim_Connect with fellow data professionals,-0.0018323534700381205
+motivation_len,main_aim_Learn data afresh,0.002472732236997673
+motivation_len,main_aim_Upskill,0.013098345331148092
+motivation_len,main_aim_both upskilling and connecting with fellow data professionals,0.1691294432234266
+motivation_len,gender,0.2608821855106305
+motivation_len,country,0.17375608452741076
+motivation_len,track,0.14915357246110456
+motivation_len,aptitude_completed,-0.053138250631105936
+motivation_len,total_score,-0.11998941187983833
+motivation_len,month,0.22357381800111253
+motivation_len,motivation_len,1.0
+motivation_len,graduated_num,0.1620157364018576
+graduated_num,age_range,-0.04063180276860003
+graduated_num,experience_years,0.20555387655340918
+graduated_num,hours_per_week,0.03706126092186208
+graduated_num,skill_level,0.21710817657110307
+graduated_num,ref_source_LinkedIn,0.039528470752104757
+graduated_num,ref_source_Twitter,0.05976143046671964
+graduated_num,ref_source_WhatsApp,-0.11834115780078214
+graduated_num,ref_source_Word of mouth,0.007277781371744767
+graduated_num,ref_source_through a geeks for geeks webinar,0.22718473369882597
+graduated_num,main_aim_Connect with fellow data professionals,0.11134424539960092
+graduated_num,main_aim_Learn data afresh,-0.11952286093343932
+graduated_num,main_aim_Upskill,0.054816126206689304
+graduated_num,main_aim_both upskilling and connecting with fellow data professionals,0.22718473369882597
+graduated_num,gender,-0.014418745018211825
+graduated_num,country,-0.07099522928088316
+graduated_num,track,-0.1113442453996009
+graduated_num,aptitude_completed,0.10122204127236455
+graduated_num,total_score,-0.05152928347134899
+graduated_num,month,-0.11987084357238831
+graduated_num,motivation_len,0.1620157364018576
+graduated_num,graduated_num,1.0
