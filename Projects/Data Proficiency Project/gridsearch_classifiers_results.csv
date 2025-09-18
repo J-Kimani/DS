@@ -1,4 +1,4 @@
 model,best_score,best_params
-logistic_regression,0.74,"{'C': 0.0001, 'max_iter': 500, 'penalty': 'l1', 'solver': 'liblinear'}"
-svm,0.74,"{'C': 0.1, 'gamma': 'scale', 'kernel': 'linear'}"
-xgboost_classifier,0.74,"{'eval_metric': 'logloss', 'gamma': 0.5, 'learning_rate': 0.01, 'max_depth': 3, 'min_child_weight': 1, 'n_estimators': 50, 'subsample': 0.6}"
+logistic_regression,0.7875,"{'C': 11.288378916846883, 'max_iter': 500, 'penalty': 'l2', 'solver': 'lbfgs'}"
+svm,0.825,"{'C': 10, 'gamma': 'auto', 'kernel': 'rbf'}"
+xgboost_classifier,0.775,"{'eval_metric': 'logloss', 'gamma': 0.5, 'learning_rate': 0.1, 'max_depth': 3, 'min_child_weight': 1, 'n_estimators': 50, 'subsample': 0.8}"
