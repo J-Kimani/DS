@@ -66,8 +66,46 @@ VALUES('Joshua', 'Karanja', 'Thika Road', 'Juja', 99);
 
 SELECT * FROM Student;
 
+-- AGGREGATE FUNCTIONS
+-- COUNT
+SELECT COUNT(StudentID)
+FROM Student
+WHERE Address = "Thika Road";
 
+-- AVERAGE
+SELECT AVG(Marks)
+From Student;
 
+SELECT * FROM Student;
+
+-- SUM
+SELECT SUM(Marks)
+From Student;
+
+-- MINIMUM
+SELECT FName, LName, Marks
+FROM Student
+WHERE Marks = (SELECT MIN(Marks) FROM Student);
+
+-- MAXIMUM
+SELECT FName, LName, Marks
+FROM Student
+WHERE Marks = (SELECT MAX(Marks) FROM Student);
+
+-- GROUP BY
+SELECT COUNT(StudentID), City
+FROM Student
+Group By City;
+
+USE sql_learn;
+
+SELECT * FROM Student;
+
+-- HAVING
+SELECT FName, SUM(Marks)
+FROM Student
+GROUP BY FName
+HAVING SUM(Marks) > 80;
 
 
 
