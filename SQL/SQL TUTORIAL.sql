@@ -107,6 +107,23 @@ FROM Student
 GROUP BY FName
 HAVING SUM(Marks) > 80;
 
+-- ORDER BY
+SELECT COUNT(StudentID), city
+FROM Student
+GROUP BY City
+ORDER BY City DESC;
+
+-- NULL VALUES
+SELECT FName, LName
+FROM Student
+WHERE Marks IS NULL;
+
+-- IS NOT NULL
+SELECT FName, LName
+FROM Student
+WHERE Marks IS NOT NULL;
+
+-- UPDATE
 
 
 
