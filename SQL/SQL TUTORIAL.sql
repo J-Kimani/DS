@@ -123,11 +123,36 @@ SELECT FName, LName
 FROM Student
 WHERE Marks IS NOT NULL;
 
+SELECT * FROM Student;
+
 -- UPDATE
+UPDATE Student
+SET Fname = 'John',
+Lname = 'Doe'
+WHERE StudentID = 11;
+
+SELECT * FROM Student;
+
+-- DELETE
+DELETE FROM Student
+WHERE City= 'Juja';
 
 
+USE sql_learn;
 
+SELECT * FROM Student;
 
+-- IN OPERATOR
+SELECT StudentID, FName, LName
+FROM Student
+WHERE City IN ('Nairobi', 'Kisumu', 'Karatina', 'Machakos');
+
+-- BETWEEN
+SELECT StudentID, FName, LName, Marks FROM Student
+WHERE Marks BETWEEN 70 AND 100;
+
+-- ALLIASES IN SQL
+-- COLUMN ALIAS
 
 
 
