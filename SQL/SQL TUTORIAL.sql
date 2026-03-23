@@ -153,7 +153,12 @@ WHERE Marks BETWEEN 70 AND 100;
 
 -- ALLIASES IN SQL
 -- COLUMN ALIAS
+SELECT StudentID as Id
+from Student;
 
+-- TABLE ALIAS
+SELECT S.Fname, S.Lname
+FROM Student as S;
 
 
 
