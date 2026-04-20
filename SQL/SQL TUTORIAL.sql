@@ -160,8 +160,19 @@ from Student;
 SELECT S.Fname, S.Lname
 FROM Student as S;
 
+-- SQL OPERATORS
+-- NOT IN
+SELECT * FROM Student;
+SELECT FName, City
+FROM Student
+WHERE CITY NOT IN ('Nairobi', 'Kisumu');
 
+-- IN
+SELECT FName, LName, City
+FROM Student
+WHERE City IN ('Thika', 'Busia', 'Juja');
 
+-- COMPARISON
 
 
 
