@@ -172,8 +172,30 @@ SELECT FName, LName, City
 FROM Student
 WHERE City IN ('Thika', 'Busia', 'Juja');
 
--- COMPARISON
+-- COMPARISON >, =, <, >=
+SELECT * FROM Student;
+SELECT * FROM Student WHERE Marks = 78;
 
+-- LIKE CONDITION
+-- Cities starting with N
+SELECT * FROM Student
+WHERE City LIKE 'N%';
+
+-- Cities ending with i
+SELECT * FROM Student
+WHERE City LIKE '%i';
+
+-- Cities starting with N and ending with i
+SELECT * FROM Student
+WHERE City LIKE 'N%i';
+
+-- Cities containing 'su'
+SELECT * FROM Student
+WHERE City LIKE '%su%';
+
+-- Cities with exactly 4 characters
+SELECT * FROM Student
+WHERE City LIKE '____'; 
 
 
 
