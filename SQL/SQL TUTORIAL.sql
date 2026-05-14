@@ -197,6 +197,21 @@ WHERE City LIKE '%su%';
 SELECT * FROM Student
 WHERE City LIKE '____'; 
 
+-- CASE EXPRESSION
+SELECT * FROM Student WHERE Marks IS NULL;
+SELECT * FROM Student WHERE Marks IS NOT NULL;
+
+-- EXAMPLE
+SELECT CASE City
+WHEN "Nairobi" THEN "Capital City"
+WHEN "Thika" THEN "Industrial Town"
+WHEN "Kisumu" THEN "Lake-side Town"
+ELSE City
+END AS CityCategory
+FROM Student;
+
+-- NORMALIZATION IN SQL
+50:52 MIN
 
 
 
