@@ -211,7 +211,7 @@ END AS CityCategory
 FROM Student;
 
 -- NORMALIZATION IN SQL
-50:52 MIN
+1.04.40
 
 
 
