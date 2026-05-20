@@ -211,10 +211,59 @@ END AS CityCategory
 FROM Student;
 
 -- NORMALIZATION IN SQL
-1.04.40
+-- TRIGGERS
+SELECT * FROM Student;
+
+SELECT * FROM Student WHERE StudentID = 13;
+
+-- OPERATIONS USING TRIGGER
+-- DROP (Removes trigger form database
+DROP TRIGGER add_marks;
+
+-- DISPLAY (Show triggers in the database)
+SHOW TRIGGERS in sql_learn;
+
+-- INSERT 
+-- BEFORE INSERT TRIGGERS
+SELECT * FROM Student;
+CREATE TRIGGER add_marks
+BEFORE INSERT
+ON Student
+FOR EACH ROW
+SET new.marks = new.marks + 6;
+
+INSERT INTO Student (StudentID, FName, LName, Address, City, Marks)
+VALUES (12, 'Alice', 'Wambui', 'Moi Avenue', 'Nakuru', 75);
+
+INSERT INTO Student (StudentID, FName, LName, Address, City, Marks)
+VALUES (13, 'David', 'Kiplagat', 'Stadium Road', 'Eldoret', 68);
+DROP TRIGGER add_marks;
+
+-- AFTER INSERT TRIGGERS
+-- Create Final_mark table
+CREATE TABLE final_mark (
+marks int
+);
+
+-- Create the trigger
+CREATE TRIGGER total_mark
+AFTER INSERT
+ON student
+FOR EACH ROW
+INSERT INTO final_mark VALUES(new.marks);
+
+-- Insert a new student
+INSERT INTO Student VALUES 
+(14, 'Alice', 'Mwai', 'Avenue', 'Thika', 85);
+
+-- Check the Student table
+SELECT * FROM Student WHERE StudentID = 14;
 
 
+-- Check the Final_mark table
+SELECT * FROM final_mark;
 
+Reached: 1:11:23
 
 
 
