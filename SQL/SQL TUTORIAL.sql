@@ -263,7 +263,24 @@ SELECT * FROM Student WHERE StudentID = 14;
 -- Check the Final_mark table
 SELECT * FROM final_mark;
 
-Reached: 1:11:23
+USE sql_learn;
+SELECT * FROM Student;
+
+-- JOINS
+-- INNER JOIN
+/*
+This type of join returns those records which have matching values in both
+tables. So. if you perform an INNER JOIN operation between the Employee table
+and the Projects table, all the tuples which have matching values in both the
+tables will be given as output.
+
+Syntax:
+
+SELECT Table1.Column1,Table1.Column2,Table2.Column1, ....
+FROM Table1
+INNER JOIN Table2
+ON Table1.MatchingColumnName = Table2.MatchingColumnName;
+*/
 
 
 
