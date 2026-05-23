@@ -281,6 +281,55 @@ FROM Table1
 INNER JOIN Table2
 ON Table1.MatchingColumnName = Table2.MatchingColumnName;
 */
+-- CREATE A COURSES TABLE
+CREATE TABLE Courses (
+	CourseID INT PRIMARY KEY,
+    StudentID INT,
+    CourseName VARCHAR(50),
+    Grade VARCHAR(2)
+    );
+
+-- INSERT COURSES
+INSERT INTO Courses VALUES
+(101, 1, 'Mathematics', 'B+'),
+(102, 1, 'English', 'A-'),
+(103, 2, 'Biology', 'A'),
+(104, 3, 'Chemistry', 'C+'),
+(105, 4, 'Physics', 'A+'),
+(106, 5, 'Mathematics', 'B'),
+(107, 6, 'English', 'A'),
+(108, 7, 'Biology', 'C'),
+(109, 11, 'Physics', 'A+'),
+(110, 11, 'Mathematics', 'A+');
+
+SELECT * FROM Courses;
+
+-- GET STUDENT NAMES WITH THEIR COURSES
+SELECT Student.StudentID, Student.Fname, Student.LName, Courses.CourseName, Courses.Grade
+FROM Student
+INNER JOIN Courses
+ON Student.StudentID = Courses.StudentID;
+
+-- GET STUDENTS FROM NAIROBI WITH THEIR COURSES
+SELECT Student.Fname, Student.LName, Student.City, Courses.CourseName, Courses.Grade
+FROM Student
+INNER JOIN Courses
+ON Student.StudentID = Courses.StudentID
+WHERE Student.CIty = 'Nairobi';
+
+-- GET STUDENTS WITH GRADES A OR A+
+SELECT Student.Fname, Student.Lname, Student.Marks, Courses.CourseName, Courses.Grade
+FROM Student
+INNER JOIN Courses
+ON Student.StudentID = Courses.StudentID
+WHERE Courses.Grade IN ('A', 'A+');
+
+-- COUNT HOW MANY COURSES EACH STUDENT TAKES
+SELECT Student.FName, Student.LName, COUNT(Courses.CourseID) AS TotalCourses
+FROM Student
+INNER JOIN Courses
+ON Student.StudentID = Courses.StudentID
+GROUP BY Student.StudentID, Student.Fname, Student.LName;
 
 
 
