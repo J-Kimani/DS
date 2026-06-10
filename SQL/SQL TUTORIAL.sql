@@ -331,5 +331,100 @@ INNER JOIN Courses
 ON Student.StudentID = Courses.StudentID
 GROUP BY Student.StudentID, Student.Fname, Student.LName;
 
+/*
+LEFT JOIN
 
+The LEFT JOIN or the LEFT OUTER JOIN returns all the records from the left table
+and also those records which satisfy a condition from the right table. Also, for
+the records having no matching values in the right table, the output or the
+result-set will contain the NULL values.
 
+Syntax:
+
+SELECT Table1.Column1,Table1.Column2,Table2.Column1, ....
+FROM Table1
+LEFT JOIN Table2
+ON Table1.MatchingColumnName = Table2.MatchingColumnName;
+*/
+USE sql_learn;
+SELECT Student.StudentID, Student.Fname, Student.Lname, Student.City, Courses.CourseName,
+Courses.Grade
+FROM Student
+LEFT JOIN Courses ON Student.StudentID = Courses.StudentID;
+
+-- Example 2: Show All Students with Their Total Courses (Including Those Without Courses)
+SELECT Student.StudentID, Student.Fname, Student.Lname, Student.Marks, COUNT(Courses.CourseID)
+AS TotalCourses
+FROM Student
+LEFT JOIN Courses ON Student.StudentID = Courses.StudentID
+GROUP BY Student.StudentID, Student.Fname, Student.Lname, Student.Marks
+ORDER BY TotalCourses DESC;
+
+-- Example 3: Find Students Without Any Courses
+SELECT Student.StudentID, STudent.Fname, Student.Lname, Student.City
+FROM Student
+LEFT JOIN Courses ON Student.StudentID = Courses.StudentID
+WHERE Courses.CourseID IS NULL;
+
+-- Example 4: Find Students Without Any Courses
+SELECT Student.Fname, Student.Lname, Student.Marks,
+COALESCE(Courses.CourseName, "No Course") AS CourseName,
+COALESCE(Courses.Grade, "-") AS Grade
+FROM Student
+LEFT JOIN Courses ON Student.StudentID = Courses.StudentID
+ORDER BY Student.StudentID;
+
+/*
+RIGHT JOIN
+
+The RIGHT JOIN or the RIGHT OUTER JOIN returns all the records from the right
+table and also those records which satisfy a condition from the left table. Also,
+for the records having no matching values in the left table, the output or the
+result-set will contain the NULL values.
+
+Syntax:
+
+SELECT Table1.Column1,Table1.Column2,Table2.Column1, ....
+FROM Table1
+RIGHT JOIN Table2
+ON Table1.MatchingColumnName = Table2.MatchingColumnName;
+*/
+SELECT Student.StudentID, Student.Fname, Student.Lname, Courses.CourseID, 
+Courses.CourseName, Courses.Grade
+FROM Student
+RIGHT JOIN Courses ON Student.StudentID = Courses.StudentID;
+
+/*
+To See the Real Difference, Let's Add Courses WITHOUT Students
+First, add a course with no StudentID:
+*/
+INSERT INTO Courses VALUES
+(111, NULL, "History", "A"),
+(112, NULL, "Geography", "B+");
+
+SELECT * FROM Courses;
+SELECT Student.StudentID, Student.Fname, Student.Lname, Courses.CourseID, 
+Courses.CourseName, Courses.Grade
+FROM Student
+RIGHT JOIN Courses ON Student.StudentID = Courses.StudentID;
+
+-- Example 1: Find All Courses (Even Those Without Students)
+SELECT COALESCE(Student.Fname, "Unassigned") AS StudentName, Courses.CourseID,
+Courses.CourseName, Courses.Grade
+FROM Student
+RIGHT JOIN Courses ON Student.StudentID = Courses.StudentID
+ORDER BY Courses.CourseID;
+
+ -- Example 2: Count Students Per Course
+ SELECT Courses.CourseID, Courses.CourseName, COUNT(Student.StudentID) AS StudentCount
+ FROM Student
+ RIGHT JOIN Courses ON Student.StudentID = Courses.StudentID
+ GROUP BY Courses.CourseID, Courses.CourseName;
+ 
+-- Example 3: Find Courses with No Students Assigned
+SELECT Courses.CourseID, Courses.CourseName, Courses.Grade
+FROM Student
+RIGHT JOIN Courses ON Student.StudentID = Courses.StudentID
+WHERE Student.StudentID is NULL;
+
+ 
