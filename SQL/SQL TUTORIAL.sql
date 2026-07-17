@@ -427,4 +427,102 @@ FROM Student
 RIGHT JOIN Courses ON Student.StudentID = Courses.StudentID
 WHERE Student.StudentID is NULL;
 
- 
+/* FULL JOIN
+
+Full Join or the Full Outer Join returns all those records which either have a
+match in the left(Table1) or the right(Table2) table.
+
+Syntax:
+
+SELECT Table1.Column1,Table1.Column2,Table2.Column1, ....
+FROM Table1
+FULL JOIN Table2
+ON Table1.MatchingColumnName = Table2.MatchingColumnName;
+*/
+use sql_learn;
+SELECT Student.StudentID, Student.Fname, Student.Lname, Courses.CourseID, Courses.CourseName,
+Courses.Grade
+FROM Student
+LEFT JOIN Courses ON Student.StudentID = Courses.StudentID
+
+UNION
+
+SELECT Student.StudentID, Student.Fname, Student.Lname, Courses.CourseID, Courses.CourseName,
+Courses.Grade
+From Student
+RIGHT JOIN Courses ON Student.StudentID = Courses.StudentID;
+
+-- Example 1: Show All with Better Formatting
+SELECT COALESCE(Student.StudentID, 'No Student') AS StudentID,
+       COALESCE(Student.Fname, 'Unassigned') AS StudentName,
+       COALESCE(Courses.CourseID, 'No Course') AS CourseID,
+       COALESCE(Courses.CourseName, 'Unassigned') AS CourseName,
+       COALESCE(Courses.Grade, '-') AS Grade
+FROM Student
+LEFT JOIN Courses ON Student.StudentID = Courses.StudentID
+
+UNION
+
+SELECT COALESCE(Student.StudentID, 'No Student') AS StudentID,
+       COALESCE(Student.Fname, 'Unassigned') AS StudentName,
+       COALESCE(Courses.CourseID, 'No Course') AS CourseID,
+       COALESCE(Courses.CourseName, 'Unassigned') AS CourseName,
+       COALESCE(Courses.Grade, '-') AS Grade
+FROM Student
+RIGHT JOIN Courses ON Student.StudentID = Courses.StudentID;
+
+-- Example 2: Count Statistics
+SELECT 
+    COUNT(CASE WHEN Student.StudentID IS NOT NULL AND Courses.CourseID IS NOT NULL THEN 1 END) AS MatchingPairs,
+    COUNT(CASE WHEN Student.StudentID IS NOT NULL AND Courses.CourseID IS NULL THEN 1 END) AS StudentsNoCoursess,
+    COUNT(CASE WHEN Student.StudentID IS NULL AND Courses.CourseID IS NOT NULL THEN 1 END) AS CoursesNoStudents
+FROM Student
+LEFT JOIN Courses ON Student.StudentID = Courses.StudentID
+
+UNION ALL
+
+SELECT 
+    COUNT(CASE WHEN Student.StudentID IS NOT NULL AND Courses.CourseID IS NOT NULL THEN 1 END),
+    COUNT(CASE WHEN Student.StudentID IS NOT NULL AND Courses.CourseID IS NULL THEN 1 END),
+    COUNT(CASE WHEN Student.StudentID IS NULL AND Courses.CourseID IS NOT NULL THEN 1 END)
+FROM Student
+RIGHT JOIN Courses ON Student.StudentID = Courses.StudentID;
+
+-- Example 3: Find All Unmatched Records
+SELECT Student.StudentID, Student.Fname, Student.LName,
+       Courses.CourseID, Courses.CourseName
+FROM Student
+LEFT JOIN Courses ON Student.StudentID = Courses.StudentID
+WHERE Courses.CourseID IS NULL
+
+UNION
+
+SELECT Student.StudentID, Student.Fname, Student.LName,
+       Courses.CourseID, Courses.CourseName
+FROM Student
+RIGHT JOIN Courses ON Student.StudentID = Courses.StudentID
+WHERE Student.StudentID IS NULL;
+
+
+USE sql_learn;
+-- FUNCTIONS
+-- CONVERSION FUNCTIONS
+/* The conversion built-in functions are used to convert a expr from one data type to another
+
+Function		Syntax						Description
+CAST		CAST(expr AS datatype)
+CONVERT		CONVERT(datatype,expr)			Returns value of specfied datatype on success
+PARSE		PARSE(value AS datatype)		Throws error on failre
+TRY_CAST	TRY_CAST(expr AS datatype)
+TRY_CONVERT	TRY_CONVERT(datatype,expr)		Returns value of specified datatype on success
+TRY PARSE	TRY_PARSE(value AS datatype)	NULL on falure
+*/
+
+
+
+
+
+
+
+
+
