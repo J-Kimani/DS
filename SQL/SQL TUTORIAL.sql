@@ -518,11 +518,53 @@ TRY_CONVERT	TRY_CONVERT(datatype,expr)		Returns value of specified datatype on s
 TRY PARSE	TRY_PARSE(value AS datatype)	NULL on falure
 */
 
+-- Example 1: CAST - Convert String to Number
+SELECT StudentID, Fname, LName, Marks,
+       CAST(Marks AS CHAR(5)) AS MarksAsText,
+       CAST('100' AS SIGNED INT) * 2 AS StringToNumber
+FROM Student
+LIMIT 5;
 
+-- Example 2: Convert to Decimal (with precision) 
+SELECT StudentID, Fname, Marks,
+		CAST(Marks AS DECIMAL(5, 2)) AS MarksDecimal
+FROM Student
+LIMIT 5;
 
+-- Example 3: String to Signed Integer
+SELECT 
+       CAST('50' AS SIGNED) + 20 AS AddNumbers,
+       CAST('100' AS SIGNED) * 2 AS MultiplyNumbers;
 
+-- Example 4: Using COALESCE with CAST
 
+SELECT StudentID, Fname, LName,
+       CAST(StudentID AS CHAR) AS IDText,
+       CAST(Marks AS DECIMAL(5,1)) AS MarksPrecision,
+       CONCAT(CAST(Marks AS CHAR), ' out of 100') AS MarksDescription
+FROM Student
+LIMIT 5;
 
+-- Example 5: Try Without Error Handling
+SELECT StudentID , Fname,
+	CAST(Marks AS SIGNED) AS SafeConversion,
+    COALESCE(CAST(Marks AS DECIMAL(5,2)), 0) AS SafeWithDefault
+FROM Student
+LIMIT 5;
 
+-- Get All Students with Text Conversions
+SELECT StudentID,
+	CONCAT(Fname, ' ', LName) AS FullName,
+    CAST(Marks AS CHAR) AS MarksText,
+    CAST(CAST(Marks AS DECIMAL(5,1)) / 100 AS CHAR) AS PercentageText
+FROM Student
+WHERE Marks > 75
+LIMIT 10;
 
-
+-- Convert and Calculate
+SELECT StudentID, Fname,
+	Marks AS OriginalMarks,
+    CAST(Marks AS SIGNED) + 10 AS MarksPlus10,
+    CAST(Marks AS DECIMAL(5,2)) / 100 AS PercentageOfHundered
+FROM Student
+LIMIT 5;
