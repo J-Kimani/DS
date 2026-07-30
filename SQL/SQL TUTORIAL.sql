@@ -568,3 +568,27 @@ SELECT StudentID, Fname,
     CAST(Marks AS DECIMAL(5,2)) / 100 AS PercentageOfHundered
 FROM Student
 LIMIT 5;
+
+use sql_learn;
+
+/** Logical Functions
+
+Logical functions can be used to display one of several values based on a logical conditions
+
+Function
+
+CHOOSE
+
+IIF
+
+Syntax
+CHOOSE ( index, val_1, val_2 [, val_n ])
+
+IIF ( boolean_expr, true_value, false_value )
+
+Description
+Return a specified index from a list of values. Return
+NULL, if index is 0 or greater than number of items
+Return one of two values, based on whether the
+Boolean expr evaluates to true or false
+**/
