@@ -592,3 +592,24 @@ NULL, if index is 0 or greater than number of items
 Return one of two values, based on whether the
 Boolean expr evaluates to true or false
 **/
+-- IF FUNCTION
+SELECT IF(1>10, 'True', 'False');
+
+use sql_learn;
+
+-- Example 1: Basic IF - Pass or Fail
+SELECT StudentID, Fname, LName, Marks,
+	IF(Marks >= 70, 'PASS', 'FAIL') AS Status
+FROM Student;
+
+SELECT * FROM Student;
+
+-- Example 2: Grade Classification
+SELECT StudentID, Fname, LName, Marks, 
+	IF(Marks >= 90, "A",
+		IF(Marks >= 80, "B",
+			IF(Marks >= 70, "C", "F"))) AS Grade
+FROM Student
+ORDER BY Marks DESC;
+
+-- Example 3: Performance Category
