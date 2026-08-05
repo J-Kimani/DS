@@ -613,3 +613,30 @@ FROM Student
 ORDER BY Marks DESC;
 
 -- Example 3: Performance Category
+SELECT StudentID, Fname, LName, Marks,
+	IF (Marks > 80, "Excellent", "Good") AS Performance
+FROM Student
+WHERE Marks > 60;
+
+-- Example 4: Calculate Bonus Based on Performance
+SELECT StudentID, FName, LName, Marks,
+	IF(Marks >= 80, Marks * 0.10,
+		IF(Marks >= 70, Marks * 0.05, 0)) AS Bonus
+FROM Student
+ORDER BY Bonus DESC;
+
+-- Example 5: Scholarship Eligibility
+SELECT StudentID, Fname, LName, City, Marks,
+	IF(Marks >= 85, "Eligible", "Not Eligible") AS ScholarshipStatus
+FROM Student;
+
+-- Example 6: Mark Range Classification
+SELECT StudentID, Fname, Marks,
+	IF(Marks >= 90, "Outstanding",
+		IF(Marks >= 75, "Above Average",
+			IF(Marks >= 60, "Average", "Below Average"))) AS Classification
+FROM Student
+ORDER BY Marks DESC;
+
+-- Example 7: Conditional Concatenation
+    
