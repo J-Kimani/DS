@@ -638,5 +638,51 @@ SELECT StudentID, Fname, Marks,
 FROM Student
 ORDER BY Marks DESC;
 
+
+use sql_learn;
+
 -- Example 7: Conditional Concatenation
+SELECT StudentID,
+	CONCAT(Fname, " ", LName) AS FullName,
+    Marks,
+    CONCAT("Student: ", Fname, " - Status: ",
+			IF(Marks >= 75, "PASS", "FAIL")) AS DetailedStatus
+	FROM Student
+    LIMIT 5;
     
+SELECT * FROM Courses;
+
+-- Example 8: IF with JOINs
+SELECT Student.StudentID, Student.Fname, Student.Marks,
+	IF(Courses.CourseID IS NOT NULL, "Has Course", "No Course") AS CourseStatus
+FROM Student
+LEFT JOIN Courses ON Student.StudentID = Courses.StudentID
+LIMIT 10;
+
+-- Example 9: Multiple Conditions with AND/OR
+SELECT StudentID, Fname, Marks,
+	IF(Marks >= 80 AND FName LIKE "J%", "Excellence Starting with J",
+		IF(Marks >= 75, "Good Student", "Needs Improvement")) AS Comment
+FROM Student;
+
+-- Example 10: Comparison - IF vs CASE
+-- Using IF (Nested)
+SELECT Fname, Marks,
+       IF(Marks >= 90, 'A', 
+          IF(Marks >= 80, 'B', 
+             IF(Marks >= 70, 'C', 'F'))) AS Grade
+FROM Student;
+-- Using CASE (Cleaner for Multiple Conditions)
+SELECT Fname, Marks,
+       CASE 
+           WHEN Marks >= 90 THEN 'A'
+           WHEN Marks >= 80 THEN 'B'
+           WHEN Marks >= 70 THEN 'C'
+           ELSE 'F'
+       END AS Grade
+FROM Student;
+
+    
+
+
+
