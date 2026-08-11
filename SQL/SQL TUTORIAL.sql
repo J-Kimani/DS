@@ -682,7 +682,25 @@ SELECT Fname, Marks,
        END AS Grade
 FROM Student;
 
-    
+-- MATH FUNCTIONS
+SELECT ABS(SQRT(16) - POW(4, 2)) AS RESULTSET;    
+
+SELECT POWER(2, 9);
+
+-- AGGREGATE FUNCTIONS
+USE sql_learn;
+-- AVERAGE
+SELECT * FROM student;
+SELECT AVG(Marks) AS AverageMarks
+FROM Student;
+
+-- Average Marks by City
+SELECT City,
+	ROUND(AVG(Marks), 2) AS AverageMarks,
+    COUNT(*) AS TotalStudents
+FROM Student
+GROUP BY City
+ORDER BY AverageMarks DESC;
 
 
 
