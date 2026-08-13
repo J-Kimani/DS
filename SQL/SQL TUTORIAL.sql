@@ -702,5 +702,51 @@ FROM Student
 GROUP BY City
 ORDER BY AverageMarks DESC;
 
+-- Students Above Average
+SELECT StudentID, Fname, Lname, Marks,
+	ROUND(AVG(Marks) OVER (), 2) AS ClassAverage,
+    IF (Marks > (SELECT AVG(Marks) FROM STUDENT), 'Above Average', 'Below Average') AS Perfomance
+FROM Student
+ORDER BY Marks DESC;
 
+-- Average Marks with Grade Comparison
+SELECT City,
+	ROUND(AVG(Marks), 2) AS CityAVerageMarks,
+		IF(AVG(Marks)  >= 80, "Excellent City",
+			IF(AVG(Marks) >= 70, "Good City", "Needs Improvement")) AS CityPerformance
+FROM Student
+GROUP BY City
+ORDER BY CityAverageMarks DESC;
 
+-- Average Marks with Student COUNT
+SELECT
+	ROUND(AVG(Marks), 2) AS OverallAverage,
+    COUNT(*) AS TotalStudents,
+    MIN(Marks) AS LowestMark,
+    Max(Marks) AS HighestMark
+FROM Student;
+
+-- Average with JOIN - Average Marks per Course
+SELECT Courses.CourseName,
+	ROUND(AVG(Student.Marks), 2) AS AvgMarksForCourse,
+    COUNT(Student.StudentID) AS StudentCount
+FROM Student
+INNER JOIN Courses ON Student.StudentID = Courses.StudentID
+GROUP BY Courses.CourseName
+ORDER BY AvgMarksForCourse DESC;
+
+-- Compare Individual to Average
+SELECT StudentID, FName, LName, Marks,
+	ROUND(AVG(Marks) OVER (), 2) AS ClassAverge,
+    ROUND(Marks - AVG(Marks) OVER (), 2) AS DifferenceFromAverage
+FROM Student
+ORDER BY DifferenceFromAverage DESC;
+
+-- HAVING - Cities with Average Above 80
+SELECT City,
+       ROUND(AVG(Marks), 2) AS CityAverage,
+       COUNT(*) AS StudentCount
+FROM Student
+GROUP BY City
+HAVING AVG(Marks) > 80
+ORDER BY CityAverage DESC;
