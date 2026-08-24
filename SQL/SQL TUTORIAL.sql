@@ -750,3 +750,21 @@ FROM Student
 GROUP BY City
 HAVING AVG(Marks) > 80
 ORDER BY CityAverage DESC;
+
+use sql_learn;
+
+-- Example 1: Get AVG, MIN, MAX, SUM of Marks from Student Table
+SELECT AVG(Marks) AS AVGMARKS,
+MIN(Marks) AS MINMARKS,
+MAX(Marks) AS MAXMARKS,
+SUM(Marks) AS SUMMARKS
+FROM Student;
+
+-- Example 2: Get Student Count for Each City
+SELECT City,
+	COUNT(*) AS StudentCount
+FROM Student
+GROUP BY City
+ORDER BY STudentCount DESC;
+
+-- STRING FUNCTIONS
