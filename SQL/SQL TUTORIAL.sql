@@ -768,3 +768,123 @@ GROUP BY City
 ORDER BY STudentCount DESC;
 
 -- STRING FUNCTIONS
+/*
+================================================================================
+STRING FUNCTIONS
+================================================================================
+Description:
+· String functions perform operations on string input values and return 
+  either string or numeric values
+· When string functions receive non-string arguments, the input type is 
+  implicitly converted to text data type
+· These functions are essential for data cleaning, manipulation, and formatting
+
+================================================================================
+FUNCTION REFERENCE TABLE:
+================================================================================
+
+Function Name: LTRIM
+Syntax:        LTRIM(char_expr)
+Description:   Removes leading blanks/spaces from the beginning of a string
+Example:       LTRIM('   Hello') → 'Hello'
+
+---
+
+Function Name: RTRIM
+Syntax:        RTRIM(char_expr)
+Description:   Removes trailing blanks/spaces from the end of a string
+Example:       RTRIM('Hello   ') → 'Hello'
+
+---
+
+Function Name: CHAR
+Syntax:        CHAR(int_expr)
+Description:   Converts an ASCII integer code to its corresponding character
+Example:       CHAR(65) → 'A'
+
+---
+
+Function Name: CHARINDEX
+Syntax:        CHARINDEX(exprToFind, exprToSearch [, start_location])
+Description:   Searches for a substring within another string and returns 
+               the starting position if found (returns 0 if not found)
+Example:       CHARINDEX('world', 'hello world') → 7
+
+---
+
+Function Name: STR
+Syntax:        STR(expression)
+Description:   Converts numeric data into character/string data format
+Example:       STR(123.45) → '123.45'
+
+---
+
+Function Name: CONCAT
+Syntax:        CONCAT(str1, str2, str3, ...)
+Description:   Concatenates (joins) two or more string values together
+               to create a single string
+Example:       CONCAT('Hello', ' ', 'World') → 'Hello World'
+
+================================================================================
+ADDITIONAL COMMON STRING FUNCTIONS:
+================================================================================
+
+Function Name: SUBSTRING / SUBSTR
+Syntax:        SUBSTRING(str, start, length)
+Description:   Extracts a portion of a string starting at position 'start'
+               for 'length' characters
+Example:       SUBSTRING('Hello World', 1, 5) → 'Hello'
+
+---
+
+Function Name: LENGTH / LEN
+Syntax:        LENGTH(str)
+Description:   Returns the number of characters in a string
+Example:       LENGTH('Hello') → 5
+
+---
+
+Function Name: UPPER
+Syntax:        UPPER(str)
+Description:   Converts all characters in a string to uppercase
+Example:       UPPER('hello') → 'HELLO'
+
+---
+
+Function Name: LOWER
+Syntax:        LOWER(str)
+Description:   Converts all characters in a string to lowercase
+Example:       LOWER('HELLO') → 'hello'
+
+---
+
+Function Name: REPLACE
+Syntax:        REPLACE(str, from_str, to_str)
+Description:   Replaces all occurrences of a substring with another substring
+Example:       REPLACE('Hello World', 'World', 'MySQL') → 'Hello MySQL'
+
+---
+
+Function Name: TRIM
+Syntax:        TRIM(str)
+Description:   Removes both leading and trailing spaces from a string
+Example:       TRIM('  Hello  ') → 'Hello'
+
+================================================================================
+*/
+use sql_learn;
+-- REVERSE STATEMENT
+SELECT REVERSE("ABC") AS REVERSESTRING;
+SELECT LTRIM("       ABC");
+SELECT RTRIM("ABC       ");
+SELECT TRIM("     abc    ");
+SELECT LOWER("ABC");
+SELECT UPPER("abc");
+
+-- DATE & TIME FUNCTION
+
+
+
+`
+
+
