@@ -882,9 +882,216 @@ SELECT LOWER("ABC");
 SELECT UPPER("abc");
 
 -- DATE & TIME FUNCTION
+/*
+================================================================================
+MYSQL DATE FUNCTIONS - CORRECTIONS FROM SQL SERVER
+================================================================================
+
+Description:
+· MySQL uses different date function syntax compared to SQL Server
+· SQL Server uses DATEPART() function for extracting date parts
+· MySQL uses individual functions for each date component (MONTH, YEAR, DAY, etc.)
+· When migrating queries from SQL Server to MySQL, replace DATEPART() calls
+  with the corresponding MySQL functions listed below
+
+================================================================================
+DATE FUNCTION COMPARISON TABLE - SQL SERVER vs MYSQL:
+================================================================================
+
+EXTRACTING MONTH:
+SQL Server Syntax:  DATEPART(mm, date)
+MySQL Syntax:       MONTH(date)
+Description:        Returns the month number (1-12) from a date
+Example:            MONTH('2017-10-12') → 10
+
+---
+
+EXTRACTING YEAR:
+SQL Server Syntax:  DATEPART(yyyy, date)
+MySQL Syntax:       YEAR(date)
+Description:        Returns the year (4-digit) from a date
+Example:            YEAR('2017-10-12') → 2017
+
+---
+
+EXTRACTING DAY:
+SQL Server Syntax:  DATEPART(dd, date)
+MySQL Syntax:       DAY(date)
+Description:        Returns the day of the month (1-31) from a date
+Example:            DAY('2017-10-12') → 12
+
+---
+
+EXTRACTING QUARTER:
+SQL Server Syntax:  DATEPART(qq, date)
+MySQL Syntax:       QUARTER(date)
+Description:        Returns the quarter (1-4) from a date
+                   Q1: Jan-Mar (1), Q2: Apr-Jun (2), 
+                   Q3: Jul-Sep (3), Q4: Oct-Dec (4)
+Example:            QUARTER('2017-10-12') → 4
+
+---
+
+EXTRACTING WEEK:
+SQL Server Syntax:  DATEPART(wk, date)
+MySQL Syntax:       WEEK(date)
+Description:        Returns the week number (1-52/53) of the year
+Example:            WEEK('2017-10-12') → 41
+
+---
+
+EXTRACTING DAY OF WEEK:
+SQL Server Syntax:  DATEPART(dw, date)
+MySQL Syntax:       DAYOFWEEK(date)
+Description:        Returns the day of the week (1-7)
+                   1=Sunday, 2=Monday, 3=Tuesday, 4=Wednesday,
+                   5=Thursday, 6=Friday, 7=Saturday
+Example:            DAYOFWEEK('2017-10-12') → 5 (Thursday)
+
+---
+
+EXTRACTING DAY OF YEAR:
+SQL Server Syntax:  DATEPART(dy, date)
+MySQL Syntax:       DAYOFYEAR(date)
+Description:        Returns the day number within the year (1-365/366)
+Example:            DAYOFYEAR('2017-10-12') → 285
+
+---
+
+EXTRACTING HOUR:
+SQL Server Syntax:  DATEPART(hh, time)
+MySQL Syntax:       HOUR(time)
+Description:        Returns the hour component (0-23) from a datetime value
+Example:            HOUR('2017-10-12 14:30:00') → 14
+
+---
+
+EXTRACTING MINUTE:
+SQL Server Syntax:  DATEPART(mi, time)
+MySQL Syntax:       MINUTE(time)
+Description:        Returns the minute component (0-59) from a datetime value
+Example:            MINUTE('2017-10-12 14:30:45') → 30
+
+---
+
+EXTRACTING SECOND:
+SQL Server Syntax:  DATEPART(ss, time)
+MySQL Syntax:       SECOND(time)
+Description:        Returns the second component (0-59) from a datetime value
+Example:            SECOND('2017-10-12 14:30:45') → 45
+
+================================================================================
+ADDITIONAL USEFUL MYSQL DATE FUNCTIONS:
+================================================================================
+
+Function Name: NOW()
+Syntax:        NOW()
+Description:   Returns the current date and time
+Example:       NOW() → 2026-08-31 22:52:00
+
+---
+
+Function Name: CURDATE()
+Syntax:        CURDATE()
+Description:   Returns only the current date (without time)
+Example:       CURDATE() → 2026-08-31
+
+---
+
+Function Name: CURTIME()
+Syntax:        CURTIME()
+Description:   Returns only the current time (without date)
+Example:       CURTIME() → 22:52:00
+
+---
+
+Function Name: MONTHNAME()
+Syntax:        MONTHNAME(date)
+Description:   Returns the full month name as a string
+Example:       MONTHNAME('2017-10-12') → October
+
+---
+
+Function Name: DAYNAME()
+Syntax:        DAYNAME(date)
+Description:   Returns the full day name as a string
+Example:       DAYNAME('2017-10-12') → Thursday
+
+---
+
+Function Name: DATE_ADD()
+Syntax:        DATE_ADD(date, INTERVAL value unit)
+Description:   Adds a specified time interval to a date
+Example:       DATE_ADD('2017-10-12', INTERVAL 10 DAY) → 2017-10-22
+
+---
+
+Function Name: DATE_SUB()
+Syntax:        DATE_SUB(date, INTERVAL value unit)
+Description:   Subtracts a specified time interval from a date
+Example:       DATE_SUB('2017-10-12', INTERVAL 10 DAY) → 2017-10-02
+
+---
+
+Function Name: DATEDIFF()
+Syntax:        DATEDIFF(date1, date2)
+Description:   Returns the number of days between two dates
+Example:       DATEDIFF('2017-10-12', '2017-10-02') → 10
+
+---
+
+Function Name: DATE_FORMAT()
+Syntax:        DATE_FORMAT(date, format_string)
+Description:   Formats a date according to a specified format pattern
+Example:       DATE_FORMAT('2017-10-12', '%d-%M-%Y') → 12-October-2017
+
+================================================================================
+COMMON DATEADD INTERVAL UNITS:
+================================================================================
+
+INTERVAL Unit       Description
+INTERVAL ... DAY    Add/subtract days
+INTERVAL ... MONTH  Add/subtract months
+INTERVAL ... YEAR   Add/subtract years
+INTERVAL ... HOUR   Add/subtract hours
+INTERVAL ... MINUTE Add/subtract minutes
+INTERVAL ... SECOND Add/subtract seconds
+INTERVAL ... WEEK   Add/subtract weeks
+
+Examples:
+DATE_ADD('2017-10-12', INTERVAL 1 MONTH)   → 2017-11-12
+DATE_ADD('2017-10-12', INTERVAL 6 MONTH)   → 2018-04-12
+DATE_ADD('2017-10-12', INTERVAL 1 YEAR)    → 2018-10-12
+DATE_ADD('2017-10-12', INTERVAL 30 DAY)    → 2017-11-11
+
+================================================================================
+KEY MIGRATION TIPS:
+================================================================================
+
+✅ Replace all DATEPART(mm, ...) with MONTH(...)
+✅ Replace all DATEPART(yyyy, ...) with YEAR(...)
+✅ Replace all DATEPART(dd, ...) with DAY(...)
+✅ Replace all DATEPART(qq, ...) with QUARTER(...)
+✅ Replace all DATEPART(wk, ...) with WEEK(...)
+✅ Replace all DATEPART(dw, ...) with DAYOFWEEK(...)
+✅ Replace all DATEPART(dy, ...) with DAYOFYEAR(...)
+✅ Replace all DATEPART(hh, ...) with HOUR(...)
+✅ Replace all DATEPART(mi, ...) with MINUTE(...)
+✅ Replace all DATEPART(ss, ...) with SECOND(...)
+
+❌ DATEPART() function does NOT exist in MySQL
+❌ Do not try to use SQL Server syntax in MySQL - it will throw an error
+
+================================================================================
+*/
+
+SELECT MONTH("2027-10-31");
+
+SELECT DATE_ADD("2027-10-31", INTERVAL 3 MONTH);
+
+SELECT DATE_ADD("2027-10-31", INTERVAL 3 DAY);
 
 
 
-`
 
 
