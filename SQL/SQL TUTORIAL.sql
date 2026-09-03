@@ -1091,6 +1091,17 @@ SELECT DATE_ADD("2027-10-31", INTERVAL 3 MONTH);
 
 SELECT DATE_ADD("2027-10-31", INTERVAL 3 DAY);
 
+use sql_learn;
+-- COUNT(*) FROM Student GROUP BY City
+SELECT COUNT(*) AS StudentCount
+FROM Student
+GROUP BY City;
+
+-- With City Name for Clarity
+SELECT City, COUNT(*) AS StudentCount
+FROM Student
+GROUP BY City;
+fufireurhfr
 
 
 
