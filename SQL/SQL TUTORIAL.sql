@@ -1101,8 +1101,33 @@ GROUP BY City;
 SELECT City, COUNT(*) AS StudentCount
 FROM Student
 GROUP BY City;
-fufireurhfr
 
+-- HAVING FUNCTION
+SELECT City, COUNT(*) AS StudentCount
+FROM Student
+GROUP BY City
+HAVING MIN(Marks) > 70
+ORDER BY StudentCount DESC;
 
+SELECT * FROM Student;
+
+-- STORED PROCEDURE
+-- A stored procedure is a set of sql statements with a name, that has been created and stored in the
+-- database
+
+-- Stored Procedure can be defined as the set of logical group of SQL statements which are grouped
+-- to perform a specific task
+
+-- Like other programming constructs they can:
+
+-- Accept input parameters
+
+-- Return multiple values (out parameters)
+
+-- Contain programming statements
+
+-- Can call other stored procedures/functions
+
+-- Returns status to indicate success or failure
 
 
