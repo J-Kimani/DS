@@ -1111,23 +1111,80 @@ ORDER BY StudentCount DESC;
 
 SELECT * FROM Student;
 
--- STORED PROCEDURE
--- A stored procedure is a set of sql statements with a name, that has been created and stored in the
--- database
+/*
+================================================================================
+STORED PROCEDURES - MYSQL
+================================================================================
 
--- Stored Procedure can be defined as the set of logical group of SQL statements which are grouped
--- to perform a specific task
+Definition:
+· A stored procedure is a set of SQL statements stored in the database
+· Can accept input parameters and return output values
+· Improves security, performance, and reusability
 
--- Like other programming constructs they can:
+MYSQL SYNTAX:
 
--- Accept input parameters
+DELIMITER //
 
--- Return multiple values (out parameters)
+CREATE PROCEDURE procedure_name()
+BEGIN
+    -- SQL statements here
+END //
 
--- Contain programming statements
+DELIMITER ;
 
--- Can call other stored procedures/functions
+EXECUTION:
+CALL procedure_name();
 
--- Returns status to indicate success or failure
+================================================================================
+KEY DIFFERENCES: SQL SERVER vs MYSQL
+================================================================================
 
+SQL Server:             MySQL:
+GO                      DELIMITER // ... DELIMITER ;
+AS                      BEGIN ... END
+procedure_name          procedure_name()
+No BEGIN/END            Requires BEGIN/END
 
+================================================================================
+PARAMETER TYPES:
+================================================================================
+
+IN param        - Input only
+OUT param       - Output only  
+INOUT param     - Both input and output
+
+Example:
+CREATE PROCEDURE name(IN studentID INT, OUT result VARCHAR(50))
+
+================================================================================
+BENEFITS:
+================================================================================
+
+✓ Reduces network traffic
+✓ Improves security
+✓ Reusability
+✓ Better performance
+✓ Centralized logic
+
+================================================================================
+*/
+use sql_learn;
+DELIMITER //
+
+CREATE PROCEDURE uspGetStudentDetails()
+BEGIN
+	SELECT * FROM Student;
+END //
+
+DELIMITER ;
+
+CALL uspGetStudentDetails();
+
+DELIMITER //
+
+CREATE PROC uspGetStudentDetails()
+BEGIN
+	SELECT * FROM Student;
+END //
+
+DELIMITER ;
