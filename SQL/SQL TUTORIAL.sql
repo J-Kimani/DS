@@ -1180,11 +1180,21 @@ DELIMITER ;
 
 CALL uspGetStudentDetails();
 
+-- STORED PROCEDURE WITH PARAMETER
 DELIMITER //
 
-CREATE PROC uspGetStudentDetails()
+CREATE PROCEDURE uspGetStudentDetail(IN pCity VARCHAR(30))
 BEGIN
-	SELECT * FROM Student;
+	SELECT * FROM Student
+    WHERE City = pCity;
 END //
 
 DELIMITER ;
+
+CALL uspGetStudentDetail('Nairobi');
+
+-- NULL STORED PROCEDURE
+
+
+
+
