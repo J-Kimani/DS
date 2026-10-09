@@ -1193,8 +1193,20 @@ DELIMITER ;
 
 CALL uspGetStudentDetail('Nairobi');
 
--- NULL STORED PROCEDURE
+use sql_learn;
 
+-- NULL STORED PROCEDURE
+DELIMITER //
+
+CREATE PROCEDURE uspGetStudentDetail2(IN pCity VARCHAR(30))
+BEGIN
+	SELECT * FROM Student
+    WHERE pCity IS NULL OR City = pCity;
+END//
+
+DELIMITER ;
+CALL uspGetStudentDetail2('Nairobi');
+CALL uspGETStudentDetail2(NULL);
 
 
 
