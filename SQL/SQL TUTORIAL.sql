@@ -1208,5 +1208,7 @@ DELIMITER ;
 CALL uspGetStudentDetail2('Nairobi');
 CALL uspGETStudentDetail2(NULL);
 
+-- STORED PROCEDURE WITH MULTIPLE PARAMETERS
+
 
 
