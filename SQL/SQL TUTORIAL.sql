@@ -1209,6 +1209,24 @@ CALL uspGetStudentDetail2('Nairobi');
 CALL uspGETStudentDetail2(NULL);
 
 -- STORED PROCEDURE WITH MULTIPLE PARAMETERS
+-- Basic Version
+DELIMITER //
+CREATE PROCEDURE uspGetStudentDetails(
+	IN pCity VARCHAR(30),
+    IN PMarks INT
+    )
+BEGIN
+	SELECT * FROM Student
+    WHERE (pCity IS NULL OR City = pCity)
+    AND (pMarks IS NULL OR Marks = pMarks);
+END //
+
+DELIMITER ;
+SELECT * FROM Student;
+CALL uspGetStudentDetails("Nairobi", 78);
+CALL uspGetStudentDetails("Nairobi", NULL);
+CALL uspGetStudentDetails(NULL, 85);
+CALL uspGetStudentDetails(NULL, NULL);
 
 
 
