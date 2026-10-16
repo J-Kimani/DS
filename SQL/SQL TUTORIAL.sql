@@ -1228,5 +1228,26 @@ CALL uspGetStudentDetails("Nairobi", NULL);
 CALL uspGetStudentDetails(NULL, 85);
 CALL uspGetStudentDetails(NULL, NULL);
 
+/* This is multiparameter Stored Procedure
+Having Output Parameter*/
+use sql_learn;
+DELIMITER //
 
+CREATE PROCEDURE uspGetCount(
+	IN pCity VARCHAR(30),
+    OUT pCount INT
+)
+BEGIN
+	SELECT COUNT(*) INTO pCount
+    FROM Student
+    WHERE City = pCity;
+END //
 
+DELIMITER ;
+
+SELECT * FROM Student;
+CALL uspGetCount("Nairobi", @StudentCount);
+SELECT @StudentCount;
+
+CALL uspGetCount("Juja", @StudentCount);
+SELECT @StudentCount;
