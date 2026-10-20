@@ -1251,3 +1251,32 @@ SELECT @StudentCount;
 
 CALL uspGetCount("Juja", @StudentCount);
 SELECT @StudentCount;
+
+-- ERROR HANDLING
+DELIMITER //
+
+CREATE PROCEDURE uspTryCatchTest()
+BEGIN
+	DECLARE v_errno INT;
+    DECLARE v_message TEXT;
+   
+   -- Runs when any SQL error occurs (Like CATCH)
+   DECLARE EXIT HANDLER FOR SQLEXCEPTION
+   BEGIN
+		GET DIAGNOSTICS CONDITION 1
+			v_errno = MYSQL_ERRNO,
+            v_message = MESSAGE_TEXT;
+		
+        SELECT v_errno AS ErrorNumber,
+				v_message AS ErrorMessage;
+	END;
+    
+    -- Code to try (like TRY)
+    SELECT * FROM NoSuchTable;
+END //
+
+DELIMITER ;
+
+CALL uspTryCatchTest();
+
+
