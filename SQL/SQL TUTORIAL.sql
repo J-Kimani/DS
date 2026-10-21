@@ -1279,4 +1279,95 @@ DELIMITER ;
 
 CALL uspTryCatchTest();
 
+-- USER DEFINED FUNCTIONS
+/*
+================================================================================
+USER DEFINED FUNCTIONS (UDF)
+================================================================================
+
+Definition:
+· A user defined function is a compact piece of SQL code that can accept
+  parameters, perform complex calculations, and return either a single value
+  or a table
+· Works like functions in programming languages
+
+--------------------------------------------------------------------------------
+SCALAR VALUED FUNCTION
+--------------------------------------------------------------------------------
+· Returns a single value only (for example an integer or a timestamp)
+· Can be used anywhere a single value is expected (SELECT list, WHERE clause, etc.)
+
+--------------------------------------------------------------------------------
+TABLE VALUED FUNCTION
+--------------------------------------------------------------------------------
+· Returns a set of rows (a table)
+· Useful when multiple rows need to be returned at the same time
+· Used in the FROM clause like a table
+
+--------------------------------------------------------------------------------
+MYSQL NOTE:
+--------------------------------------------------------------------------------
+· MySQL supports scalar functions (CREATE FUNCTION ... RETURNS)
+· MySQL does not support table valued functions. Use a stored procedure or a
+  view to return multiple rows instead.
+
+================================================================================
+*/
+
+/*
+================================================================================
+UDF: SCALAR FUNCTION
+================================================================================
+
+Description:
+· A scalar function returns a single data value of the type defined in the
+  RETURNS clause
+· An inline scalar function needs no function body
+· When multiple statements are needed, they go inside a BEGIN ... END block
+
+--------------------------------------------------------------------------------
+SQL SERVER SYNTAX:
+--------------------------------------------------------------------------------
+CREATE [OR ALTER] FUNCTION schema_name.function_name(@parameter_name AS parameter_data_type)
+RETURNS return_data_type
+AS
+BEGIN
+    -- SQL statements / computation
+    RETURN scalar_value;
+END;
+
+--------------------------------------------------------------------------------
+MYSQL SYNTAX:
+--------------------------------------------------------------------------------
+DELIMITER //
+
+CREATE FUNCTION function_name(parameter_name parameter_data_type)
+RETURNS return_data_type
+DETERMINISTIC
+BEGIN
+    -- SQL statements / computation
+    RETURN scalar_value;
+END //
+
+DELIMITER ;
+
+--------------------------------------------------------------------------------
+KEY DIFFERENCES:
+--------------------------------------------------------------------------------
+· MySQL has no @ prefix on parameter names
+· MySQL has no AS before the parameter data type
+· MySQL has no schema prefix (dbo.) in the function name
+· MySQL has no OR ALTER (use DROP FUNCTION IF EXISTS first)
+· MySQL requires DETERMINISTIC, NO SQL, or READS SQL DATA characteristics
+  when binary logging is enabled
+· MySQL needs DELIMITER // because the body contains semicolons
+
+--------------------------------------------------------------------------------
+CALLING A SCALAR FUNCTION:
+--------------------------------------------------------------------------------
+· SQL Server: SELECT dbo.function_name(value);
+· MySQL:      SELECT function_name(value);
+
+================================================================================
+*/
 
