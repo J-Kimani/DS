@@ -1370,4 +1370,25 @@ CALLING A SCALAR FUNCTION:
 
 ================================================================================
 */
+use sql_learn;
+-- Function with no parameters
+DROP FUNCTION IF EXISTS NoParameters;
+
+DELIMITER //
+
+CREATE FUNCTION NoParameters()
+RETURNS INT
+DETERMINISTIC
+READS SQL DATA
+BEGIN
+	RETURN (SELECT SUM(Marks) FROM Student);
+END //
+
+DELIMITER ;
+
+SELECT NoParameters();
+
+-- FUNCTION WITH TWO PARAMETERS
+
+
 
