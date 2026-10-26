@@ -1388,7 +1388,28 @@ DELIMITER ;
 
 SELECT NoParameters();
 
+use sql_learn;
+
 -- FUNCTION WITH TWO PARAMETERS
+DROP FUNCTION  IF EXISTS fullName;
+
+DELIMITER //
+
+CREATE FUNCTION fullName(pFirstName VARCHAR(50), pLastName VARCHAR(50))
+RETURNS VARCHAR(200)
+DETERMINISTIC
+BEGIN
+	RETURN CONCAT(pFirstName, SPACE(2), pLastName);
+END //
+
+DELIMITER ;
+
+SELECT fullName("Joe", "Root") AS FullName;
+
+SELECT StudentID, fullName(FName, LName) AS FullName
+FROM Student;
+
+
 
 
 
