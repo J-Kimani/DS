@@ -1409,7 +1409,34 @@ SELECT fullName("Joe", "Root") AS FullName;
 SELECT StudentID, fullName(FName, LName) AS FullName
 FROM Student;
 
+-- MODIFYING AN EXISTING FUNCTION
+-- USE ALTER KEYWORD FOR SQL SERVER, DOES NOT EXIST IN MY SQL
+-- ALTER FUNCTION NoParameters()
+-- RETURNS INT
+-- AS
+-- BEGIN
+-- RETURN (SELECT AVG(Salary) FROM employee)
+-- END
+-- FOR MY SQL, DROP THE FUNCTION
+use sql_learn;
 
+DROP FUNCTION IF EXISTS NoParameters;
+
+DELIMITER //
+
+CREATE FUNCTION NoParameters()
+RETURNS DECIMAL(10, 2)
+READS SQL DATA
+BEGIN
+	RETURN (SELECT AVG(Marks) FROM Student);
+END //
+
+DELIMITER ;
+
+SELECT NoParameters();
+
+SELECT * FROM Student
+WHERE Marks > NoParameters();
 
 
 
