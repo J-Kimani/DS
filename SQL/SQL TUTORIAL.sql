@@ -1438,5 +1438,97 @@ SELECT NoParameters();
 SELECT * FROM Student
 WHERE Marks > NoParameters();
 
+/*
+================================================================================
+UDF: INLINE TABLE-VALUED FUNCTION
+================================================================================
 
+Description:
+· An inline table-valued function is a user-defined function that returns a
+  table
+· It can achieve the functionality of a parameterized view
+· It supports parameters in the search conditions of the WHERE clause
+
+Rules (SQL Server):
+· The RETURNS clause contains only the keyword TABLE (no column format needed)
+· There is no function body delimited by BEGIN and END
+· The RETURN clause contains a single SELECT statement in parentheses
+· Accepts only constants or @local_variable arguments
+
+--------------------------------------------------------------------------------
+SQL SERVER SYNTAX:
+--------------------------------------------------------------------------------
+CREATE [OR ALTER] FUNCTION schema_name.function_name (@parameter_name AS parameter_data_type)
+RETURNS TABLE
+AS
+RETURN (SELECT ...);
+
+--------------------------------------------------------------------------------
+MYSQL NOTE:
+--------------------------------------------------------------------------------
+· MySQL does NOT support table-valued functions, inline or otherwise
+· MySQL functions (CREATE FUNCTION ... RETURNS) can only return a single value
+· To get the same result in MySQL, use one of these instead:
+    1. A VIEW with a WHERE clause (no parameters)
+    2. A STORED PROCEDURE with an IN parameter in the WHERE clause:
+         CALL uspGetStudentsByCity('Nairobi');
+· Example stored procedure approach:
+    DELIMITER //
+    CREATE PROCEDURE uspGetStudentsByCity(IN pCity VARCHAR(30))
+    BEGIN
+        SELECT * FROM Student WHERE City = pCity;
+    END //
+    DELIMITER ;
+
+================================================================================
+*/
+
+/*
+================================================================================
+UDF: INLINE TABLE-VALUED FUNCTION - MYSQL SYNTAX
+================================================================================
+
+MySQL does not support table-valued functions, so the closest equivalents are:
+
+--------------------------------------------------------------------------------
+OPTION 1: STORED PROCEDURE WITH A PARAMETER (closest to a parameterized view)
+--------------------------------------------------------------------------------
+DELIMITER //
+
+CREATE PROCEDURE procedure_name(IN pParameter parameter_data_type)
+BEGIN
+    SELECT ...
+    FROM ...
+    WHERE column = pParameter;
+END //
+
+DELIMITER ;
+
+Call with:
+CALL procedure_name(value);
+
+--------------------------------------------------------------------------------
+OPTION 2: VIEW (no parameters, filters a fixed condition)
+--------------------------------------------------------------------------------
+CREATE OR REPLACE VIEW view_name AS
+SELECT ...
+FROM ...
+WHERE ...;
+
+Query with:
+SELECT * FROM view_name;
+
+--------------------------------------------------------------------------------
+SQL SERVER vs MYSQL:
+--------------------------------------------------------------------------------
+· SQL Server: CREATE FUNCTION ... RETURNS TABLE AS RETURN (SELECT ...)
+  Used in FROM:  SELECT * FROM dbo.function_name(value);
+· MySQL:      CREATE PROCEDURE ... BEGIN SELECT ... END
+  Called with:  CALL procedure_name(value);
+
+· SQL Server allows the function in FROM like a table
+· MySQL procedures cannot be used inside FROM, so results are retrieved with CALL
+
+================================================================================
+*/
 
